@@ -10,8 +10,7 @@ class IsAdmin(BasePermission):
         )
 
 
-class CanViewAttendance(BasePermission):
-
+class CanViewLesson(BasePermission):
 
     def has_permission(self, request, view):
         return request.user.is_authenticated
@@ -24,15 +23,15 @@ class CanViewAttendance(BasePermission):
             return True
 
         if user.role == "teacher":
-            return obj.lesson.teacher == user
+            return obj.group.teacher == user
 
         if user.role == "student":
-            return obj.student.user == user
+            return obj.group.students.filter(user=user).exists()
 
         return False
 
 
-class CanCreateAttendance(BasePermission):
+class CanCreateLesson(BasePermission):
 
     def has_permission(self, request, view):
         user = request.user
@@ -43,7 +42,7 @@ class CanCreateAttendance(BasePermission):
         return user.role in ["admin", "teacher"]
 
 
-class CanEditAttendance(BasePermission):
+class CanEditLesson(BasePermission):
 
     def has_permission(self, request, view):
         user = request.user
@@ -61,12 +60,12 @@ class CanEditAttendance(BasePermission):
             return True
 
         if user.role == "teacher":
-            return obj.lesson.teacher == user
+            return obj.group.teacher == user
 
         return False
 
 
-class CanDeleteAttendance(BasePermission):
+class CanDeleteLesson(BasePermission):
 
     def has_permission(self, request, view):
         return (

@@ -1,29 +1,38 @@
 from django.contrib import admin
-from .models import Attendance
+from .models import Lesson
 
 
-@admin.register(Attendance)
-class AttendanceAdmin(admin.ModelAdmin):
-
+@admin.register(Lesson)
+class LessonAdmin(admin.ModelAdmin):
     list_display = (
         "id",
-        "lesson",
-        "student",
+        "group",
+        "course",
+        "lesson_number",
+        "topic",
+        "lesson_date",
+        "start_time",
+        "end_time",
+        "lesson_type",
         "status",
-        "created_at",
+        "teacher",
     )
 
     list_filter = (
         "status",
-        "lesson__lesson_date",
-        "lesson__group",
+        "lesson_type",
+        "lesson_date",
+        "group",
+        "course",
     )
 
     search_fields = (
-        "student__first_name",
-        "student__last_name",
-        "lesson__topic",
+        "topic",
+        "group__name",
+        "course__name",
     )
+
+    date_hierarchy = "lesson_date"
 
     def has_add_permission(self, request):
         return request.user.is_superuser or request.user.role == "admin"

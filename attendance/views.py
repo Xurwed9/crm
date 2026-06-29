@@ -1,3 +1,5 @@
+from rest_framework import status
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
@@ -7,7 +9,6 @@ from rest_framework.generics import (
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.filters import SearchFilter
 
 from .models import Attendance
@@ -32,8 +33,7 @@ class AttendanceListAPIView(ListAPIView):
     search_fields = [
         "student__first_name",
         "student__last_name",
-        "group__name",
-        "date",
+        "lesson__topic",
     ]
 
     def get_queryset(self):
@@ -41,16 +41,19 @@ class AttendanceListAPIView(ListAPIView):
         user = self.request.user
 
         queryset = Attendance.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "group",
-            "teacher",
+            "student__user",
         )
 
         if user.role == "admin":
             return queryset
 
         if user.role == "teacher":
-            return queryset.filter(group__teacher=user)
+            return queryset.filter(lesson__teacher=user)
 
         if user.role == "student":
             return queryset.filter(student__user=user)
@@ -59,15 +62,20 @@ class AttendanceListAPIView(ListAPIView):
 
 
 class AttendanceDetailAPIView(RetrieveAPIView):
+
+
     serializer_class = AttendanceDetailSerializer
     permission_classes = [IsAuthenticated, CanViewAttendance]
 
     def get_queryset(self):
 
         return Attendance.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "group",
-            "teacher",
+            "student__user",
         )
 
 
@@ -81,13 +89,17 @@ class AttendanceCreateAPIView(CreateAPIView):
         user = self.request.user
 
         if user.role == "teacher":
-            serializer.save(teacher=user)
-        else:
-            serializer.save()
+            lesson = serializer.validated_data.get("lesson")
+
+            if lesson.teacher != user:
+                raise PermissionDenied(
+                    "You can only mark attendance for your own lessons."
+                )
+
+        serializer.save()
 
 
 class AttendanceUpdateAPIView(UpdateAPIView):
-
 
     serializer_class = AttendanceCreateUpdateSerializer
     permission_classes = [IsAuthenticated, CanEditAttendance]
@@ -95,26 +107,31 @@ class AttendanceUpdateAPIView(UpdateAPIView):
 
     def get_queryset(self):
         return Attendance.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "group",
-            "teacher",
+            "student__user",
         )
 
 
 class AttendanceDeleteAPIView(DestroyAPIView):
 
-
     permission_classes = [IsAuthenticated, CanDeleteAttendance]
 
     def get_queryset(self):
         return Attendance.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "group",
-            "teacher",
+            "student__user",
         )
 
     def destroy(self, request, *args, **kwargs):
-  
+
         attendance = self.get_object()
         attendance.delete()
 
