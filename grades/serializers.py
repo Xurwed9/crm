@@ -3,23 +3,13 @@ from .models import Grade
 
 
 class GradeListSerializer(serializers.ModelSerializer):
-    """
-    Used when returning a list of grade records.
 
-    Shows related objects (student, teacher, group, course) as readable
-    strings instead of raw IDs.
-    """
-
-    # Display the student's full name
     student = serializers.StringRelatedField()
 
-    # Display the teacher's username
     teacher = serializers.StringRelatedField()
 
-    # Display the group's name
     group = serializers.StringRelatedField()
 
-    # Display the course name
     course = serializers.StringRelatedField()
 
     class Meta:
@@ -37,11 +27,6 @@ class GradeListSerializer(serializers.ModelSerializer):
 
 
 class GradeDetailSerializer(serializers.ModelSerializer):
-    """
-    Used when viewing a single grade record in detail.
-
-    Includes all fields from the list serializer plus timestamps.
-    """
 
     student = serializers.StringRelatedField()
     teacher = serializers.StringRelatedField()
@@ -65,12 +50,6 @@ class GradeDetailSerializer(serializers.ModelSerializer):
 
 
 class GradeCreateUpdateSerializer(serializers.ModelSerializer):
-    """
-    Used when creating or updating a grade record.
-
-    Accepts foreign keys as integer IDs (student ID, teacher ID, group ID,
-    course ID) along with the lesson name, grade, and optional comment.
-    """
 
     class Meta:
         model = Grade
