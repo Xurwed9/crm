@@ -1,3 +1,5 @@
+from rest_framework import status
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
@@ -7,7 +9,6 @@ from rest_framework.generics import (
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.filters import SearchFilter
 
 from .models import Grade
@@ -32,9 +33,7 @@ class GradeListAPIView(ListAPIView):
     search_fields = [
         "student__first_name",
         "student__last_name",
-        "group__name",
-        "course__name",
-        "lesson_name",
+        "lesson__topic",
     ]
 
     def get_queryset(self):
@@ -42,17 +41,19 @@ class GradeListAPIView(ListAPIView):
         user = self.request.user
 
         queryset = Grade.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "teacher",
-            "group",
-            "course",
+            "student__user",
         )
 
         if user.role == "admin":
             return queryset
 
         if user.role == "teacher":
-            return queryset.filter(group__teacher=user)
+            return queryset.filter(lesson__teacher=user)
 
         if user.role == "student":
             return queryset.filter(student__user=user)
@@ -68,10 +69,12 @@ class GradeDetailAPIView(RetrieveAPIView):
     def get_queryset(self):
 
         return Grade.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "teacher",
-            "group",
-            "course",
+            "student__user",
         )
 
 
@@ -86,6 +89,13 @@ class GradeCreateAPIView(CreateAPIView):
         user = self.request.user
 
         if user.role == "teacher":
+            lesson = serializer.validated_data.get("lesson")
+
+            if lesson.teacher != user:
+                raise PermissionDenied(
+                    "You can only grade your own lessons."
+                )
+
             serializer.save(teacher=user)
         else:
             serializer.save()
@@ -99,10 +109,12 @@ class GradeUpdateAPIView(UpdateAPIView):
 
     def get_queryset(self):
         return Grade.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "teacher",
-            "group",
-            "course",
+            "student__user",
         )
 
 
@@ -112,17 +124,20 @@ class GradeDeleteAPIView(DestroyAPIView):
 
     def get_queryset(self):
         return Grade.objects.select_related(
+            "lesson",
+            "lesson__group",
+            "lesson__course",
+            "lesson__teacher",
             "student",
-            "teacher",
-            "group",
-            "course",
+            "student__user",
         )
 
     def destroy(self, request, *args, **kwargs):
+
         grade = self.get_object()
         grade.delete()
 
         return Response(
-            {"detail": "Grade record deleted successfully."},
+            {"detail": "Grade deleted successfully."},
             status=status.HTTP_200_OK,
         )

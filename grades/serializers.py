@@ -4,23 +4,17 @@ from .models import Grade
 
 class GradeListSerializer(serializers.ModelSerializer):
 
+    lesson = serializers.StringRelatedField()
     student = serializers.StringRelatedField()
-
     teacher = serializers.StringRelatedField()
-
-    group = serializers.StringRelatedField()
-
-    course = serializers.StringRelatedField()
 
     class Meta:
         model = Grade
         fields = (
             "id",
+            "lesson",
             "student",
             "teacher",
-            "group",
-            "course",
-            "lesson_name",
             "grade",
             "comment",
         )
@@ -28,37 +22,32 @@ class GradeListSerializer(serializers.ModelSerializer):
 
 class GradeDetailSerializer(serializers.ModelSerializer):
 
+    lesson = serializers.StringRelatedField()
     student = serializers.StringRelatedField()
     teacher = serializers.StringRelatedField()
-    group = serializers.StringRelatedField()
-    course = serializers.StringRelatedField()
 
     class Meta:
         model = Grade
         fields = (
             "id",
+            "lesson",
             "student",
             "teacher",
-            "group",
-            "course",
-            "lesson_name",
             "grade",
             "comment",
             "created_at",
-            "updated_at",
         )
 
 
 class GradeCreateUpdateSerializer(serializers.ModelSerializer):
 
+
     class Meta:
         model = Grade
         fields = (
+            "lesson",
             "student",
             "teacher",
-            "group",
-            "course",
-            "lesson_name",
             "grade",
             "comment",
         )

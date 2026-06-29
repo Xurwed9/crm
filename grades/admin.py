@@ -4,28 +4,25 @@ from .models import Grade
 
 @admin.register(Grade)
 class GradeAdmin(admin.ModelAdmin):
+
     list_display = (
         "id",
+        "lesson",
         "student",
-        "group",
-        "course",
-        "lesson_name",
         "grade",
         "teacher",
         "created_at",
     )
 
     list_filter = (
-        "course",
-        "group",
+        "lesson__group",
+        "lesson__course",
     )
 
     search_fields = (
         "student__first_name",
         "student__last_name",
-        "group__name",
-        "course__name",
-        "lesson_name",
+        "lesson__topic",
     )
 
     def has_add_permission(self, request):

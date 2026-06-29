@@ -1,11 +1,16 @@
 from django.db import models
 from accounts.models import User
 from students.models import Student
-from groups.models import Group
-from courses.models import Course
+from lessons.models import Lesson
 
 
 class Grade(models.Model):
+
+    lesson = models.ForeignKey(
+        Lesson,
+        on_delete=models.CASCADE,
+        related_name="grades",
+    )
 
     student = models.ForeignKey(
         Student,
@@ -22,22 +27,6 @@ class Grade(models.Model):
         limit_choices_to={"role": "teacher"},
     )
 
-    group = models.ForeignKey(
-        Group,
-        on_delete=models.CASCADE,
-        related_name="grades",
-    )
-
-    course = models.ForeignKey(
-        Course,
-        on_delete=models.CASCADE,
-        related_name="grades",
-    )
-
-    lesson_name = models.CharField(
-        max_length=200,
-    )
-
     grade = models.PositiveSmallIntegerField()
 
     comment = models.TextField(
@@ -48,13 +37,9 @@ class Grade(models.Model):
         auto_now_add=True,
     )
 
-    updated_at = models.DateTimeField(
-        auto_now=True,
-    )
-
     class Meta:
-        ordering = ["-created_at", "-id"]
+        unique_together = ["lesson", "student"]
+        ordering = ["-created_at"]
 
     def __str__(self):
-
-        return f"{self.student} - {self.course} - {self.grade}"
+        return f"{self.student} - {self.lesson} - {self.grade}"

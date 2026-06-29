@@ -23,7 +23,7 @@ class CanViewGrade(BasePermission):
             return True
 
         if user.role == "teacher":
-            return obj.group.teacher == user
+            return obj.lesson.teacher == user
 
         if user.role == "student":
             return obj.student.user == user
@@ -32,7 +32,6 @@ class CanViewGrade(BasePermission):
 
 
 class CanCreateGrade(BasePermission):
-
 
     def has_permission(self, request, view):
         user = request.user
@@ -61,7 +60,7 @@ class CanEditGrade(BasePermission):
             return True
 
         if user.role == "teacher":
-            return obj.group.teacher == user
+            return obj.lesson.teacher == user
 
         return False
 
