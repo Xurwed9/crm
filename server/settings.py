@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'payments',
     'dashboard',
     'reports',
+    'notifications',
 ]
 
 MIDDLEWARE = [
@@ -203,3 +204,5 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = 'accounts.User'
+
+TELEGRAM_BOT_TOKEN = ''
