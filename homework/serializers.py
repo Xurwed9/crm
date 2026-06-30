@@ -1,5 +1,12 @@
 from rest_framework import serializers
+from lessons.models import Lesson
 from .models import Homework, Submission
+
+
+class HomeworkLessonField(serializers.SlugRelatedField):
+    def to_representation(self, value):
+        return str(value)
+
 
 class HomeworkListSerializer(serializers.ModelSerializer):
 
@@ -36,6 +43,11 @@ class HomeworkDetailSerializer(serializers.ModelSerializer):
 
 
 class HomeworkCreateUpdateSerializer(serializers.ModelSerializer):
+
+    lesson = HomeworkLessonField(
+        slug_field="id",
+        queryset=Lesson.objects.all(),
+    )
 
     class Meta:
         model = Homework

@@ -1,6 +1,30 @@
 from rest_framework import serializers
+from students.models import Student
 from .models import Payment, PaymentHistory
 from django.db.models import Sum, Q
+
+
+class PaymentStudentField(serializers.SlugRelatedField):
+    def to_representation(self, value):
+        return str(value)
+
+    def to_internal_value(self, data):
+        if isinstance(data, int):
+            return Student.objects.get(pk=data)
+        parts = data.strip().split(" ", 1)
+        if len(parts) == 2:
+            first, last = parts
+            try:
+                return Student.objects.get(first_name=first, last_name=last)
+            except Student.DoesNotExist:
+                pass
+        try:
+            return Student.objects.get(user__username=data)
+        except Student.DoesNotExist:
+            pass
+        raise serializers.ValidationError(
+            f"Student with name '{data}' not found. Use 'First Last' format."
+        )
 
 
 class PaymentListSerializer(serializers.ModelSerializer):
@@ -61,6 +85,11 @@ class PaymentDetailSerializer(serializers.ModelSerializer):
 
 
 class PaymentCreateUpdateSerializer(serializers.ModelSerializer):
+
+    student = PaymentStudentField(
+        slug_field="id",
+        queryset=Student.objects.all(),
+    )
 
     class Meta:
         model = Payment

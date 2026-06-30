@@ -63,15 +63,6 @@ class UserCreateAPIView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
 
-        raw_password = serializer.context.get("raw_password")
-        if raw_password:
-            try:
-                send_welcome_email(user, raw_password=raw_password)
-            except Exception as e:
-                import logging
-                logger = logging.getLogger(__name__)
-                logger.error(f"Welcome email failed for {user.email}: {e}")
-
         return Response(
             {
                 "detail": "Корбар сохта шуд ва маълумоти вуруд ба email фиристода шуд.",

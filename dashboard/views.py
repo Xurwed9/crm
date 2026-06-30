@@ -222,7 +222,10 @@ class DashboardAPIView(APIView):
     def _student_dashboard(self, user):
 
         today = date.today()
-        student = user.student
+        try:
+            student = user.student
+        except Exception:
+            return {"detail": "Student profile not found."}
 
         group = student.groups.select_related("course").first()
         group_data = None

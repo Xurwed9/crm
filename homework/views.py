@@ -175,7 +175,14 @@ class SubmissionCreateAPIView(CreateAPIView):
 
     def perform_create(self, serializer):
 
-        serializer.save(student=self.request.user.student)
+        try:
+            student = self.request.user.student
+        except Exception:
+            from rest_framework.exceptions import PermissionDenied
+            raise PermissionDenied(
+                "Student profile not found. Please contact admin."
+            )
+        serializer.save(student=student)
 
 
 class SubmissionGradeAPIView(UpdateAPIView):

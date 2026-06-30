@@ -5,7 +5,7 @@ from .views import TeacherViewSet
 router = DefaultRouter()
 
 router.register(
-    "teachers",
+    "",
     TeacherViewSet,
     basename="teachers"
 )

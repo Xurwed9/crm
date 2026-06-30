@@ -77,12 +77,24 @@ class GroupCreateUpdateSerializer(serializers.ModelSerializer):
 
     course = serializers.CharField()
     teacher = serializers.CharField()
-    students = serializers.ListField(write_only=True)
+    students = serializers.ListField(write_only=True, required=False, default=list)
 
 
     class Meta:
         model = Group
-        fields = "__all__"
+        fields = (
+            "id",
+            "name",
+            "course",
+            "teacher",
+            "students",
+            "schedule",
+            "room",
+            "max_students",
+            "start_date",
+            "end_date",
+            "status",
+        )
 
 
     def _split_full_name(self, full_name):
@@ -129,7 +141,7 @@ class GroupCreateUpdateSerializer(serializers.ModelSerializer):
 
         course_name = validated_data.pop("course")
         teacher_full_name = validated_data.pop("teacher")
-        students_full_names = validated_data.pop("students")
+        students_full_names = validated_data.pop("students", [])
 
         course = Course.objects.get(name=course_name)
 

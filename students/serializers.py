@@ -2,6 +2,7 @@ import random
 
 from rest_framework import serializers
 from django.core.mail import send_mail
+from django.conf import settings
 
 from accounts.models import User
 from .models import Student
@@ -60,7 +61,7 @@ Your CRM account:
 Phone: {phone}
 Password: {password}
 """,
-            "your_email@gmail.com",
+            settings.DEFAULT_FROM_EMAIL,
             [email],
         )
 

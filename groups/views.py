@@ -36,7 +36,7 @@ class GroupQuerysetMixin:
             return queryset.filter(teacher=user)
 
         if user.role == "student":
-            return queryset.filter(students=user)
+            return queryset.filter(students__user=user)
 
         return Group.objects.none()
 
