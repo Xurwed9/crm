@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from .models import NotificationLog, NotificationSetting
 
@@ -77,17 +78,21 @@ class SendNotificationSerializer(serializers.Serializer):
             "user_created", "homework_assigned", "exam_scheduled",
             "payment_reminder", "absent", "custom",
         ],
+        label=_("Event type"),
     )
-    recipient_id = serializers.IntegerField()
+    recipient_id = serializers.IntegerField(
+        label=_("Recipient ID"),
+    )
     channels = serializers.ListField(
         child=serializers.ChoiceField(choices=["email", "sms", "telegram"]),
+        label=_("Channels"),
     )
-    extra_data = serializers.JSONField(required=False, default=dict)
+    extra_data = serializers.JSONField(required=False, default=dict, label=_("Extra data"))
 
     def validate_recipient_id(self, value):
         from accounts.models import User
         if not User.objects.filter(pk=value).exists():
-            raise serializers.ValidationError("User does not exist.")
+            raise serializers.ValidationError(_("User does not exist."))
         return value
 
 

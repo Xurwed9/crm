@@ -4,6 +4,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.crypto import get_random_string
 from django.core.mail import send_mail
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 import random
 from .models import User, Profile
 
@@ -135,18 +136,32 @@ class UserCreateSerializer(serializers.ModelSerializer):
         profile.birth_date = birth_date
         profile.save()
 
+        from django.utils import translation
+        user_language = getattr(profile, "language", "tg")
+        translation.activate(user_language)
+
+        subject = _("CRM Login Information")
+        message = _(
+            "Hello {first_name} {last_name},\n\n"
+            "Your CRM account has been created.\n\n"
+            "Login (Phone): {phone_number}\n"
+            "Password: {password}\n\n"
+        ).format(
+            first_name=user.first_name,
+            last_name=user.last_name,
+            phone_number=user.phone_number,
+            password=raw_password,
+        )
+
         send_mail(
-            subject="CRM Login Information",
-            message=(
-                f"Салом {user.first_name} {user.last_name}\n\n"
-                f"Барои шумо аккаунти CRM сохта шуд.\n\n"
-                f"Логин (Phone): {user.phone_number}\n"
-                f"Парол: {raw_password}\n\n"
-            ),
+            subject=subject,
+            message=message,
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[user.email],
             fail_silently=False,
         )
+
+        translation.deactivate()
 
         return user
 
@@ -198,8 +213,13 @@ class AdminUserUpdateSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
-    phone_number = serializers.CharField()
-    password = serializers.CharField(write_only=True)
+    phone_number = serializers.CharField(
+        label=_("Phone number"),
+    )
+    password = serializers.CharField(
+        write_only=True,
+        label=_("Password"),
+    )
 
     def validate(self, attrs):
         user = authenticate(
@@ -208,22 +228,29 @@ class LoginSerializer(serializers.Serializer):
         )
         if user is None:
             raise serializers.ValidationError(
-                "Phone number or password is incorrect."
+                _("Phone number or password is incorrect.")
             )
         if not user.is_active:
-            raise serializers.ValidationError("User is inactive.")
+            raise serializers.ValidationError(_("User is inactive."))
         attrs["user"] = user
         return attrs
 
 
 class ChangePasswordSerializer(serializers.Serializer):
-    old_password = serializers.CharField(write_only=True)
-    new_password = serializers.CharField(write_only=True, min_length=8)
+    old_password = serializers.CharField(
+        write_only=True,
+        label=_("Old password"),
+    )
+    new_password = serializers.CharField(
+        write_only=True,
+        min_length=8,
+        label=_("New password"),
+    )
 
     def validate_old_password(self, value):
         user = self.context.get("request").user
         if not user.check_password(value):
-            raise serializers.ValidationError("Парол нодуруст аст.")
+            raise serializers.ValidationError(_("Password is incorrect."))
         return value
 
 
@@ -234,7 +261,7 @@ class ChangeRoleSerializer(serializers.ModelSerializer):
 
 
 class LogoutSerializer(serializers.Serializer):
-    refresh = serializers.CharField()
+    refresh = serializers.CharField(label=_("Refresh token"))
 
     def save(self):
         try:
@@ -242,5 +269,11 @@ class LogoutSerializer(serializers.Serializer):
             token.blacklist()
         except Exception:
             raise serializers.ValidationError(
-                {"detail": "Invalid or expired refresh token."}
+                {"detail": _("Invalid or expired refresh token.")}
             )
+
+
+class ProfileLanguageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ("language",)

@@ -2,6 +2,7 @@ from datetime import date, datetime
 
 from django.db.models import Count, Sum, Q, Value, DecimalField
 from django.db.models.functions import Coalesce
+from django.utils.translation import gettext_lazy as _
 from rest_framework.permissions import BasePermission, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -19,6 +20,7 @@ from .utils import export_response
 
 
 class IsAdmin(BasePermission):
+    message = _("Only administrators can perform this action.")
 
     def has_permission(self, request, view):
         return (

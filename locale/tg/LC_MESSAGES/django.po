@@ -1,0 +1,1326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-30 23:57+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: CRM Team <noreply@crm.local>\n"
+"Language-Team: Тоҷикӣ <noreply@crm.local>\n"
+"Language: Тоҷикӣ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: accounts/admin.py:11 accounts/models.py:84
+msgid "Profile"
+msgstr "Профил"
+
+#: accounts/admin.py:12 accounts/models.py:85
+msgid "Profiles"
+msgstr "Профилҳо"
+
+#: accounts/admin.py:44 accounts/admin.py:63
+msgid "Additional Information"
+msgstr "Маълумоти иловагӣ"
+
+#: accounts/models.py:8
+msgid "Admin"
+msgstr "Администратор"
+
+#: accounts/models.py:9 grades/models.py:32 groups/models.py:36
+#: lessons/models.py:44 teachers/models.py:51
+msgid "Teacher"
+msgstr "Омӯзгор"
+
+#: accounts/models.py:10 attendance/models.py:28 exams/models.py:86
+#: grades/models.py:22 homework/models.py:66 payments/models.py:28
+#: payments/models.py:147 students/models.py:51
+msgid "Student"
+msgstr "Донишҷӯ"
+
+#: accounts/models.py:16
+msgid "Role"
+msgstr "Нақш"
+
+#: accounts/models.py:22 accounts/serializers.py:217 students/serializers.py:28
+#: teachers/serializers.py:28
+msgid "Phone number"
+msgstr "Рақами телефон"
+
+#: accounts/models.py:26 attendance/models.py:50 courses/models.py:28
+#: exams/models.py:42 exams/models.py:100 grades/models.py:46
+#: groups/models.py:79 homework/models.py:41 journal/models.py:30
+#: lessons/models.py:89 notifications/models.py:116 payments/models.py:68
+#: settings/models.py:18 settings/models.py:50 settings/models.py:82
+#: settings/models.py:111 settings/models.py:153 settings/models.py:184
+#: settings/models.py:226
+msgid "Created at"
+msgstr "Сохта шуд"
+
+#: accounts/models.py:30 courses/models.py:32 exams/models.py:47
+#: exams/models.py:105 groups/models.py:84 journal/models.py:35
+#: lessons/models.py:94 payments/models.py:73 payments/models.py:159
+#: settings/models.py:22 settings/models.py:54 settings/models.py:86
+#: settings/models.py:115 settings/models.py:157 settings/models.py:188
+#: settings/models.py:230
+msgid "Updated at"
+msgstr "Навсозӣ шуд"
+
+#: accounts/models.py:36 accounts/models.py:54 notifications/models.py:13
+#: students/models.py:18 teachers/models.py:18
+msgid "User"
+msgstr "Истифодабаранда"
+
+#: accounts/models.py:37
+msgid "Users"
+msgstr "Истифодабарандагон"
+
+#: accounts/models.py:45
+msgid "Tajik"
+msgstr "Тоҷикӣ"
+
+#: accounts/models.py:46
+msgid "Russian"
+msgstr "Русӣ"
+
+#: accounts/models.py:47
+msgid "English"
+msgstr "Англисӣ"
+
+#: accounts/models.py:60
+msgid "Image"
+msgstr "Расм"
+
+#: accounts/models.py:65 settings/models.py:41 students/models.py:40
+#: teachers/models.py:40
+msgid "Address"
+msgstr "Суроға"
+
+#: accounts/models.py:69
+msgid "Biography"
+msgstr "Тарҷумаи ҳол"
+
+#: accounts/models.py:74 students/models.py:34
+msgid "Birth date"
+msgstr "Санаи таваллуд"
+
+#: accounts/models.py:80
+msgid "Language"
+msgstr "Забон"
+
+#: accounts/permissions.py:6 courses/permissions.py:7 courses/permissions.py:47
+#: groups/permissions.py:6 notifications/views.py:23 reports/views.py:23
+#: teachers/permissions.py:6
+msgid "Only administrators can perform this action."
+msgstr "Танҳо администраторон метавонанд ин амалро иҷро кунанд."
+
+#: accounts/permissions.py:16 courses/permissions.py:17
+#: groups/permissions.py:16
+msgid "Only teachers can perform this action."
+msgstr "Танҳо омӯзгорон метавонанд ин амалро иҷро кунанд."
+
+#: accounts/permissions.py:26 courses/permissions.py:27
+#: groups/permissions.py:26
+msgid "Only students can perform this action."
+msgstr "Танҳо донишҷӯён метавонанд ин амалро иҷро кунанд."
+
+#: accounts/permissions.py:36 courses/permissions.py:37
+msgid "Only administrators and teachers can perform this action."
+msgstr "Танҳо администраторон ва омӯзгорон метавонанд ин амалро иҷро кунанд."
+
+#: accounts/permissions.py:46
+msgid "You can only access your own data."
+msgstr "Шумо танҳо метавонед ба маълумоти худатон дастрасӣ пайдо кунед."
+
+#: accounts/serializers.py:143
+msgid "CRM Login Information"
+msgstr "Маълумоти воридшавӣ ба CRM"
+
+#: accounts/serializers.py:145
+#, python-brace-format
+msgid ""
+"Hello {first_name} {last_name},\n"
+"\n"
+"Your CRM account has been created.\n"
+"\n"
+"Login (Phone): {phone_number}\n"
+"Password: {password}\n"
+"\n"
+msgstr "Салом {first_name} {last_name},\\n\\nҲисоби шумо дар CRM сохта шуд.\\n\\nВоридшавӣ (Телефон): {phone_number}\\nРамз: {password}\\n\\n"
+
+#: accounts/serializers.py:221
+msgid "Password"
+msgstr "Рамз"
+
+#: accounts/serializers.py:231
+msgid "Phone number or password is incorrect."
+msgstr "Рақами телефон ё рамз нодуруст аст."
+
+#: accounts/serializers.py:234
+msgid "User is inactive."
+msgstr "Истифодабаранда ғайрифаъол аст."
+
+#: accounts/serializers.py:242
+msgid "Old password"
+msgstr "Рамзи кӯҳна"
+
+#: accounts/serializers.py:247
+msgid "New password"
+msgstr "Рамзи нав"
+
+#: accounts/serializers.py:253
+msgid "Password is incorrect."
+msgstr "Рамз нодуруст аст."
+
+#: accounts/serializers.py:264
+msgid "Refresh token"
+msgstr "Токени навсозӣ"
+
+#: accounts/serializers.py:272
+msgid "Invalid or expired refresh token."
+msgstr "Токени навсозӣ беэътибор ё мӯҳлаташ гузаштааст."
+
+#: accounts/views.py:69
+msgid "User created successfully. Login information sent to email."
+msgstr "Истифодабаранда бомуваффақият сохта шуд. Маълумот ба почта фиристода шуд."
+
+#: accounts/views.py:95
+msgid "You cannot delete your own account."
+msgstr "Шумо наметавонед ҳисоби худатонро нест кунед."
+
+#: accounts/views.py:102
+msgid "User deleted successfully."
+msgstr "Истифодабаранда бомуваффақият нест карда шуд."
+
+#: accounts/views.py:115 accounts/views.py:128 accounts/views.py:240
+msgid "Profile not found."
+msgstr "Профил ёфт нашуд."
+
+#: accounts/views.py:169
+msgid "You have been logged out successfully."
+msgstr "Шумо бомуваффақият аз система баромадед."
+
+#: accounts/views.py:197
+msgid "Password changed successfully. Please login again."
+msgstr "Рамз бомуваффақият иваз карда шуд. Лутфан аз нав ворид шавед."
+
+#: accounts/views.py:213
+msgid "You cannot change your own role."
+msgstr "Шумо наметавонед нақши худатонро иваз кунед."
+
+#: accounts/views.py:223
+#, python-brace-format
+msgid "User role changed to {}."
+msgstr "Нақши истифодабаранда ба {} иваз карда шуд."
+
+#: accounts/views.py:249
+msgid "Language updated successfully."
+msgstr "Забон бомуваффақият навсозӣ карда шуд."
+
+#: attendance/models.py:11
+msgid "Present"
+msgstr "Ҳозир"
+
+#: attendance/models.py:12
+msgid "Absent"
+msgstr "Ғоиб"
+
+#: attendance/models.py:13
+msgid "Late"
+msgstr "Дер"
+
+#: attendance/models.py:14
+msgid "Excused"
+msgstr "Бо сабаб"
+
+#: attendance/models.py:21 exams/models.py:15 grades/models.py:15
+#: homework/models.py:15 journal/models.py:14 lessons/models.py:98
+msgid "Lesson"
+msgstr "Дарс"
+
+#: attendance/models.py:35 groups/models.py:74 lessons/models.py:84
+#: notifications/models.py:100 payments/models.py:58 students/models.py:47
+#: teachers/models.py:47
+msgid "Status"
+msgstr "Ҳолат"
+
+#: attendance/models.py:40
+msgid "Reason"
+msgstr "Сабаб"
+
+#: attendance/models.py:45 exams/models.py:95 grades/models.py:41
+#: payments/models.py:63
+msgid "Comment"
+msgstr "Шарҳ"
+
+#: attendance/models.py:54
+msgid "Attendance"
+msgstr "Иштирок"
+
+#: attendance/models.py:55
+msgid "Attendances"
+msgstr "Иштирокҳо"
+
+#: attendance/permissions.py:6
+msgid "You do not have permission to view attendance records."
+msgstr "Шумо иҷозаи дидани сабтҳои иштирокро надоред."
+
+#: attendance/permissions.py:13
+msgid "You do not have permission to create attendance records."
+msgstr "Шумо иҷозаи сохтани сабтҳои иштирокро надоред."
+
+#: attendance/permissions.py:20
+msgid "You do not have permission to edit attendance records."
+msgstr "Шумо иҷозаи таҳрир кардани сабтҳои иштирокро надоред."
+
+#: attendance/permissions.py:27
+msgid "You do not have permission to delete attendance records."
+msgstr "Шумо иҷозаи нест кардани сабтҳои иштирокро надоред."
+
+#: attendance/serializers.py:32 exams/serializers.py:32
+#: grades/serializers.py:33 payments/serializers.py:27
+#, python-brace-format
+msgid "Student with name '{}' not found. Use 'First Last' format."
+msgstr "Донишҷӯ бо номи '{}' ёфт нашуд. Формати 'Ном Насаб'-ро истифода баред."
+
+#: attendance/views.py:98
+msgid "You can only mark attendance for your own lessons."
+msgstr "Шумо танҳо метавонед иштирокро барои дарсҳои худатон қайд кунед."
+
+#: attendance/views.py:141
+msgid "Attendance record deleted successfully."
+msgstr "Сабти иштирок бомуваффақият нест карда шуд."
+
+#: courses/admin.py:38
+msgid "Course Information"
+msgstr "Маълумоти курс"
+
+#: courses/admin.py:44
+msgid "Course Details"
+msgstr "Тафсилоти курс"
+
+#: courses/admin.py:51
+msgid "System Information"
+msgstr "Маълумоти система"
+
+#: courses/models.py:8 groups/models.py:19 settings/models.py:8
+#: settings/models.py:36 settings/models.py:74
+msgid "Name"
+msgstr "Ном"
+
+#: courses/models.py:12 exams/models.py:25 homework/models.py:25
+#: lessons/models.py:70
+msgid "Description"
+msgstr "Тавсиф"
+
+#: courses/models.py:17
+msgid "Price"
+msgstr "Нарх"
+
+#: courses/models.py:20
+msgid "Duration (months)"
+msgstr "Давомнокӣ (моҳ)"
+
+#: courses/models.py:24 settings/models.py:180
+msgid "Is active"
+msgstr "Фаъол аст"
+
+#: courses/models.py:36 groups/models.py:26 lessons/models.py:34
+msgid "Course"
+msgstr "Курс"
+
+#: courses/models.py:37
+msgid "Courses"
+msgstr "Курсҳо"
+
+#: courses/permissions.py:60
+msgid "Only teachers can modify this resource."
+msgstr "Танҳо омӯзгорон метавонанд ин манбаъро тағйир диҳанд."
+
+#: dashboard/views.py:229
+msgid "Student profile not found."
+msgstr "Профили донишҷӯ ёфт нашуд."
+
+#: exams/models.py:20 homework/models.py:20
+msgid "Title"
+msgstr "Унвон"
+
+#: exams/models.py:29
+msgid "Maximum score"
+msgstr "Ҳадди аксари хол"
+
+#: exams/models.py:33
+msgid "Passing score"
+msgstr "Ҳадди гузариш"
+
+#: exams/models.py:37
+msgid "Date"
+msgstr "Сана"
+
+#: exams/models.py:51 exams/models.py:79 lessons/models.py:13
+msgid "Exam"
+msgstr "Имтиҳон"
+
+#: exams/models.py:52
+msgid "Exams"
+msgstr "Имтиҳонҳо"
+
+#: exams/models.py:58 exams/serializers.py:92
+msgid "Exam can only be created for lessons with type 'exam'."
+msgstr "Имтиҳон танҳо барои дарсҳои навъи 'имтиҳон' сохта мешавад."
+
+#: exams/models.py:62 exams/serializers.py:99
+msgid "Passing score cannot be greater than maximum score."
+msgstr "Ҳадди гузариш наметавонад аз ҳадди аксари хол зиёд бошад."
+
+#: exams/models.py:90
+msgid "Score"
+msgstr "Хол"
+
+#: exams/models.py:109
+msgid "Exam result"
+msgstr "Натиҷаи имтиҳон"
+
+#: exams/models.py:110
+msgid "Exam results"
+msgstr "Натиҷаҳои имтиҳон"
+
+#: exams/models.py:117 exams/serializers.py:163
+#, python-brace-format
+msgid "Score cannot exceed maximum score ({max_score})."
+msgstr "Хол наметавонад аз ҳадди аксар ({max_score}) зиёд бошад."
+
+#: exams/permissions.py:6
+msgid "You do not have permission to view exams."
+msgstr "Шумо иҷозаи дидани имтиҳонҳоро надоред."
+
+#: exams/permissions.py:13
+msgid "You do not have permission to create exams."
+msgstr "Шумо иҷозаи сохтани имтиҳонҳоро надоред."
+
+#: exams/permissions.py:20
+msgid "You do not have permission to edit exams."
+msgstr "Шумо иҷозаи таҳрир кардани имтиҳонҳоро надоред."
+
+#: exams/permissions.py:27
+msgid "You do not have permission to delete exams."
+msgstr "Шумо иҷозаи нест кардани имтиҳонҳоро надоред."
+
+#: exams/permissions.py:34
+msgid "You do not have permission to view exam results."
+msgstr "Шумо иҷозаи дидани натиҷаҳои имтиҳонро надоред."
+
+#: exams/permissions.py:41
+msgid "You do not have permission to create exam results."
+msgstr "Шумо иҷозаи сохтани натиҷаҳои имтиҳонро надоред."
+
+#: exams/permissions.py:48
+msgid "You do not have permission to edit exam results."
+msgstr "Шумо иҷозаи таҳрир кардани натиҷаҳои имтиҳонро надоред."
+
+#: exams/permissions.py:55
+msgid "You do not have permission to delete exam results."
+msgstr "Шумо иҷозаи нест кардани натиҷаҳои имтиҳонро надоред."
+
+#: exams/views.py:99
+msgid "You can only create exams for your own lessons."
+msgstr "Шумо танҳо метавонед барои дарсҳои худатон имтиҳон созед."
+
+#: exams/views.py:138
+msgid "Exam deleted successfully."
+msgstr "Имтиҳон бомуваффақият нест карда шуд."
+
+#: exams/views.py:208
+msgid "You can only enter results for your own exams."
+msgstr "Шумо танҳо метавонед натиҷаҳоро барои имтиҳонҳои худатон ворид кунед."
+
+#: exams/views.py:249
+msgid "Exam result deleted successfully."
+msgstr "Натиҷаи имтиҳон бомуваффақият нест карда шуд."
+
+#: grades/models.py:36 grades/models.py:50 homework/models.py:79
+msgid "Grade"
+msgstr "Баҳо"
+
+#: grades/models.py:51
+msgid "Grades"
+msgstr "Баҳоҳо"
+
+#: grades/permissions.py:6
+msgid "You do not have permission to view grades."
+msgstr "Шумо иҷозаи дидани баҳоҳоро надоред."
+
+#: grades/permissions.py:13
+msgid "You do not have permission to create grades."
+msgstr "Шумо иҷозаи гузоштани баҳоро надоред."
+
+#: grades/permissions.py:20
+msgid "You do not have permission to edit grades."
+msgstr "Шумо иҷозаи таҳрир кардани баҳоро надоред."
+
+#: grades/permissions.py:27
+msgid "You do not have permission to delete grades."
+msgstr "Шумо иҷозаи нест кардани баҳоро надоред."
+
+#: grades/views.py:98
+msgid "You can only grade your own lessons."
+msgstr "Шумо танҳо метавонед ба дарсҳои худатон баҳо гузоред."
+
+#: grades/views.py:143
+msgid "Grade deleted successfully."
+msgstr "Баҳо бомуваффақият нест карда шуд."
+
+#: groups/models.py:11 students/models.py:10 teachers/models.py:10
+msgid "Active"
+msgstr "Фаъол"
+
+#: groups/models.py:12 lessons/models.py:20
+msgid "Finished"
+msgstr "Хатмшуда"
+
+#: groups/models.py:13
+msgid "Closed"
+msgstr "Пӯшида"
+
+#: groups/models.py:42 groups/serializers.py:81 students/models.py:52
+msgid "Students"
+msgstr "Донишҷӯён"
+
+#: groups/models.py:46
+msgid "Start date"
+msgstr "Санаи оғоз"
+
+#: groups/models.py:50
+msgid "End date"
+msgstr "Санаи анҷом"
+
+#: groups/models.py:55
+msgid "Mon Wed Fri 18:00-20:00"
+msgstr "Дш Чр Ҷм 18:00-20:00"
+
+#: groups/models.py:56 settings/models.py:209
+msgid "Schedule"
+msgstr "Ҷадвал"
+
+#: groups/models.py:62 settings/models.py:90
+msgid "Room"
+msgstr "Ҳуҷра"
+
+#: groups/models.py:67
+msgid "Maximum students"
+msgstr "Ҳадди аксари донишҷӯён"
+
+#: groups/models.py:88 lessons/models.py:27
+msgid "Group"
+msgstr "Гурӯҳ"
+
+#: groups/models.py:89
+msgid "Groups"
+msgstr "Гурӯҳҳо"
+
+#: groups/serializers.py:79
+msgid "Course name"
+msgstr "Номи курс"
+
+#: groups/serializers.py:80
+msgid "Teacher full name"
+msgstr "Номи пурраи омӯзгор"
+
+#: groups/serializers.py:103
+#, python-brace-format
+msgid "Full name must contain first and last name. Got: '{}'"
+msgstr "Номи пурра бояд ном ва насабро дар бар гирад. Гирифта шуд: '{}'"
+
+#: groups/serializers.py:110
+#, python-brace-format
+msgid "Course with name '{}' does not exist."
+msgstr "Курс бо номи '{}' вуҷуд надорад."
+
+#: groups/serializers.py:122
+#, python-brace-format
+msgid "Teacher with full name '{}' and role 'teacher' does not exist."
+msgstr "Омӯзгор бо номи пурраи '{}' ва нақши 'омӯзгор' вуҷуд надорад."
+
+#: groups/serializers.py:135
+#, python-brace-format
+msgid "Student with full name '{}' does not exist."
+msgstr "Донишҷӯ бо номи пурраи '{}' вуҷуд надорад."
+
+#: groups/views.py:78
+msgid "Group deleted successfully."
+msgstr "Гурӯҳ бомуваффақият нест карда шуд."
+
+#: homework/models.py:29
+msgid "Deadline"
+msgstr "Мӯҳлат"
+
+#: homework/models.py:36
+msgid "Attachment"
+msgstr "Замима"
+
+#: homework/models.py:45 homework/models.py:59
+msgid "Homework"
+msgstr "Вазифаи хонагӣ"
+
+#: homework/models.py:46
+msgid "Homeworks"
+msgstr "Вазифаҳои хонагӣ"
+
+#: homework/models.py:73
+msgid "Answer"
+msgstr "Ҷавоб"
+
+#: homework/models.py:84
+msgid "Feedback"
+msgstr "Фикру мулоҳиза"
+
+#: homework/models.py:89
+msgid "Submitted at"
+msgstr "Пешниҳод шуд"
+
+#: homework/models.py:95
+msgid "Graded at"
+msgstr "Баҳо дода шуд"
+
+#: homework/models.py:99
+msgid "Submission"
+msgstr "Пешниҳод"
+
+#: homework/models.py:100
+msgid "Submissions"
+msgstr "Пешниҳодҳо"
+
+#: homework/permissions.py:6
+msgid "You do not have permission to access this resource."
+msgstr "Шумо иҷозаи дастрасӣ ба ин манбаъро надоред."
+
+#: homework/permissions.py:15
+msgid "You do not have permission to view homework."
+msgstr "Шумо иҷозаи дидани вазифаҳои хонагиро надоред."
+
+#: homework/permissions.py:37
+msgid "You do not have permission to create homework."
+msgstr "Шумо иҷозаи сохтани вазифаи хонагиро надоред."
+
+#: homework/permissions.py:49
+msgid "You do not have permission to edit homework."
+msgstr "Шумо иҷозаи таҳрир кардани вазифаи хонагиро надоред."
+
+#: homework/permissions.py:73
+msgid "You do not have permission to delete homework."
+msgstr "Шумо иҷозаи нест кардани вазифаи хонагиро надоред."
+
+#: homework/permissions.py:83
+msgid "You do not have permission to view submissions."
+msgstr "Шумо иҷозаи дидани пешниҳодҳоро надоред."
+
+#: homework/permissions.py:105
+msgid "You do not have permission to create submissions."
+msgstr "Шумо иҷозаи сохтани пешниҳодҳоро надоред."
+
+#: homework/permissions.py:115
+msgid "You do not have permission to grade submissions."
+msgstr "Шумо иҷозаи баҳо додан ба пешниҳодҳоро надоред."
+
+#: homework/permissions.py:139
+msgid "You do not have permission to delete submissions."
+msgstr "Шумо иҷозаи нест кардани пешниҳодҳоро надоред."
+
+#: homework/views.py:123
+msgid "Homework deleted successfully."
+msgstr "Вазифаи хонагӣ бомуваффақият нест карда шуд."
+
+#: homework/views.py:184
+msgid "Student profile not found. Please contact admin."
+msgstr "Профили донишҷӯ ёфт нашуд. Лутфан ба администратор муроҷиат кунед."
+
+#: homework/views.py:223
+msgid "Submission deleted successfully."
+msgstr "Пешниҳод бомуваффақият нест карда шуд."
+
+#: journal/models.py:21
+msgid "Author"
+msgstr "Муаллиф"
+
+#: journal/models.py:25
+msgid "Content"
+msgstr "Мундариҷа"
+
+#: journal/models.py:39
+msgid "Journal comment"
+msgstr "Шарҳи журнал"
+
+#: journal/models.py:40
+msgid "Journal comments"
+msgstr "Шарҳҳои журнал"
+
+#: journal/permissions.py:6
+msgid "You do not have permission to view the journal."
+msgstr "Шумо иҷозаи дидани журналро надоред."
+
+#: journal/permissions.py:28
+msgid "You do not have permission to create journal comments."
+msgstr "Шумо иҷозаи сохтани шарҳҳои журналро надоред."
+
+#: journal/permissions.py:35
+msgid "You do not have permission to edit journal comments."
+msgstr "Шумо иҷозаи таҳрир кардани шарҳҳои журналро надоред."
+
+#: journal/permissions.py:51
+msgid "You do not have permission to delete journal comments."
+msgstr "Шумо иҷозаи нест кардани шарҳҳои журналро надоред."
+
+#: journal/views.py:250 journal/views.py:256
+msgid "You can only comment on your own lessons."
+msgstr "Шумо танҳо метавонед ба дарсҳои худатон шарҳ диҳед."
+
+#: journal/views.py:288
+msgid "Comment deleted successfully."
+msgstr "Шарҳ бомуваффақият нест карда шуд."
+
+#: lessons/models.py:12
+msgid "Normal"
+msgstr "Муқаррарӣ"
+
+#: lessons/models.py:14
+msgid "Result"
+msgstr "Натиҷа"
+
+#: lessons/models.py:18
+msgid "Planned"
+msgstr "Банақшагирифташуда"
+
+#: lessons/models.py:19
+msgid "In Progress"
+msgstr "Дар рафти иҷро"
+
+#: lessons/models.py:48
+msgid "Lesson number"
+msgstr "Рақами дарс"
+
+#: lessons/models.py:52
+msgid "Lesson date"
+msgstr "Санаи дарс"
+
+#: lessons/models.py:56 settings/models.py:104
+msgid "Start time"
+msgstr "Вақти оғоз"
+
+#: lessons/models.py:60 settings/models.py:107
+msgid "End time"
+msgstr "Вақти анҷом"
+
+#: lessons/models.py:65
+msgid "Topic"
+msgstr "Мавзӯъ"
+
+#: lessons/models.py:77
+msgid "Lesson type"
+msgstr "Навъи дарс"
+
+#: lessons/models.py:99
+msgid "Lessons"
+msgstr "Дарсҳо"
+
+#: lessons/permissions.py:6
+msgid "You do not have permission to view lessons."
+msgstr "Шумо иҷозаи дидани дарсҳоро надоред."
+
+#: lessons/permissions.py:13
+msgid "You do not have permission to create lessons."
+msgstr "Шумо иҷозаи сохтани дарсҳоро надоред."
+
+#: lessons/permissions.py:20
+msgid "You do not have permission to edit lessons."
+msgstr "Шумо иҷозаи таҳрир кардани дарсҳоро надоред."
+
+#: lessons/permissions.py:27
+msgid "You do not have permission to delete lessons."
+msgstr "Шумо иҷозаи нест кардани дарсҳоро надоред."
+
+#: lessons/views.py:128
+msgid "Lesson deleted successfully."
+msgstr "Дарс бомуваффақият нест карда шуд."
+
+#: lessons/views.py:149
+msgid "Group not found."
+msgstr "Гурӯҳ ёфт нашуд."
+
+#: lessons/views.py:156
+msgid "You can only generate lessons for your own groups."
+msgstr "Шумо танҳо метавонед барои гурӯҳҳои худатон дарс тавлид кунед."
+
+#: lessons/views.py:164
+#, python-brace-format
+msgid "{} lessons generated successfully."
+msgstr "{} дарс бомуваффақият тавлид карда шуд."
+
+#: notifications/models.py:18
+msgid "Email enabled"
+msgstr "Почтаи электронӣ фаъол"
+
+#: notifications/models.py:23
+msgid "SMS enabled"
+msgstr "SMS фаъол"
+
+#: notifications/models.py:28
+msgid "Telegram enabled"
+msgstr "Телеграм фаъол"
+
+#: notifications/models.py:34
+msgid "Telegram chat ID"
+msgstr "ID-и чати Телеграм"
+
+#: notifications/models.py:38
+msgid "Notification setting"
+msgstr "Танзимоти огоҳкунӣ"
+
+#: notifications/models.py:39
+msgid "Notification settings"
+msgstr "Танзимоти огоҳкуниҳо"
+
+#: notifications/models.py:48
+msgid "User Created"
+msgstr "Истифодабаранда сохта шуд"
+
+#: notifications/models.py:49
+msgid "Homework Assigned"
+msgstr "Вазифаи хонагӣ таъин шуд"
+
+#: notifications/models.py:50
+msgid "Exam Scheduled"
+msgstr "Имтиҳон ба нақша гирифта шуд"
+
+#: notifications/models.py:51 notifications/services.py:49
+msgid "Payment Reminder"
+msgstr "Ёдоварии пардохт"
+
+#: notifications/models.py:52
+msgid "Absent Notification"
+msgstr "Огоҳкунии ғоибӣ"
+
+#: notifications/models.py:53
+msgid "Custom"
+msgstr "Фардӣ"
+
+#: notifications/models.py:57 students/serializers.py:20
+#: teachers/serializers.py:20
+msgid "Email"
+msgstr "Почтаи электронӣ"
+
+#: notifications/models.py:58
+msgid "SMS"
+msgstr "SMS"
+
+#: notifications/models.py:59
+msgid "Telegram"
+msgstr "Телеграм"
+
+#: notifications/models.py:63
+msgid "Sent"
+msgstr "Фиристода шуд"
+
+#: notifications/models.py:64
+msgid "Failed"
+msgstr "Ноком шуд"
+
+#: notifications/models.py:65 payments/models.py:19
+msgid "Pending"
+msgstr "Дар интизорӣ"
+
+#: notifications/models.py:71 notifications/serializers.py:81
+msgid "Event type"
+msgstr "Навъи рӯйдод"
+
+#: notifications/models.py:77
+msgid "Channel"
+msgstr "Канал"
+
+#: notifications/models.py:84
+msgid "Recipient"
+msgstr "Қабулкунанда"
+
+#: notifications/models.py:89
+msgid "Subject"
+msgstr "Мавзӯъ"
+
+#: notifications/models.py:93
+msgid "Body"
+msgstr "Матн"
+
+#: notifications/models.py:106
+msgid "Sent at"
+msgstr "Фиристода шуд"
+
+#: notifications/models.py:111
+msgid "Error message"
+msgstr "Паёми хатогӣ"
+
+#: notifications/models.py:120
+msgid "Notification log"
+msgstr "Гузориши огоҳкунӣ"
+
+#: notifications/models.py:121
+msgid "Notification logs"
+msgstr "Гузоришҳои огоҳкунӣ"
+
+#: notifications/serializers.py:84
+msgid "Recipient ID"
+msgstr "ID-и қабулкунанда"
+
+#: notifications/serializers.py:88
+msgid "Channels"
+msgstr "Каналҳо"
+
+#: notifications/serializers.py:90
+msgid "Extra data"
+msgstr "Маълумоти иловагӣ"
+
+#: notifications/serializers.py:95
+msgid "User does not exist."
+msgstr "Истифодабаранда вуҷуд надорад."
+
+#: notifications/services.py:16
+msgid "Welcome to CRM System"
+msgstr "Хуш омадед ба системаи CRM"
+
+#: notifications/services.py:18
+#, python-brace-format
+msgid ""
+"Hello {first_name} {last_name},\n"
+"\n"
+"Your account has been created successfully.\n"
+"\n"
+"Username: {username}\n"
+"Role: {role}\n"
+"Phone: {phone_number}"
+msgstr "Салом {first_name} {last_name},\\n\\nҲисоби шумо дар CRM бо муваффақият сохта шуд.\\n\\nНоми корбарӣ: {username}\\nНақш: {role}\\nТелефон: {phone_number}"
+
+#: notifications/services.py:26
+#, python-brace-format
+msgid "New Homework: {title}"
+msgstr "Вазифаи хонагии нав: {title}"
+
+#: notifications/services.py:28
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"New homework has been assigned.\n"
+"\n"
+"Lesson: {lesson_topic}\n"
+"Homework: {title}\n"
+"Deadline: {deadline}\n"
+"\n"
+"{description}"
+msgstr "Салом {first_name},\\n\\nВазифаи хонагии нав таъин шуд.\\n\\nДарс: {lesson_topic}\\nВазифа: {title}\\nМӯҳлат: {deadline}\\n\\n{description}"
+
+#: notifications/services.py:37
+#, python-brace-format
+msgid "Exam Scheduled: {title}"
+msgstr "Имтиҳон ба нақша гирифта шуд: {title}"
+
+#: notifications/services.py:39
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"An exam has been scheduled.\n"
+"\n"
+"Lesson: {lesson_topic}\n"
+"Exam: {title}\n"
+"Date: {date}\n"
+"Maximum Score: {maximum_score}\n"
+"Passing Score: {passing_score}"
+msgstr "Салом {first_name},\\n\\nИмтиҳон ба нақша гирифта шуд.\\n\\nДарс: {lesson_topic}\\nИмтиҳон: {title}\\nСана: {date}\\nҲадди аксари хол: {maximum_score}\\nҲадди гузариш: {passing_score}"
+
+#: notifications/services.py:51
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"This is a reminder about your pending payment.\n"
+"\n"
+"Amount: {amount}\n"
+"Due Date: {due_date}\n"
+"\n"
+"Please make the payment at your earliest convenience."
+msgstr ""
+"Салом {first_name},\n"
+"\n"
+"Ин ёдоварӣ дар бораи пардохти интизории шумо мебошад.\n"
+"\n"
+"Маблағ: {amount}\n"
+"Санаи пардохт: {due_date}\n"
+"\n"
+"Лутфан дар вақти муносиб пардохтро анҷом диҳед."
+
+#: notifications/services.py:59
+msgid "Absence Notification"
+msgstr "Огоҳкунии ғоибӣ"
+
+#: notifications/services.py:61
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"You were marked absent for the following lesson:\n"
+"\n"
+"Date: {lesson_date}\n"
+"Lesson: {lesson_topic}\n"
+"Group: {group_name}\n"
+"\n"
+"Please contact your teacher for more information."
+msgstr ""
+"Салом {first_name},\n"
+"\n"
+"Шумо дар дарси зерин ғоиб қайд шудед:\n"
+"\n"
+"Сана: {lesson_date}\n"
+"Дарс: {lesson_topic}\n"
+"Гурӯҳ: {group_name}\n"
+"\n"
+"Лутфан барои маълумоти бештар ба омӯзгори худ муроҷиат кунед."
+
+#: notifications/services.py:70
+#, python-brace-format
+msgid "{subject}"
+msgstr "{subject}"
+
+#: notifications/services.py:71
+#, python-brace-format
+msgid "{message}"
+msgstr "{message}"
+
+#: notifications/views.py:64
+msgid "No enabled channels available for this recipient."
+msgstr "Барои ин қабулкунанда каналҳои фаъол мавҷуд нестанд."
+
+#: notifications/views.py:105
+msgid "Notification log deleted successfully."
+msgstr "Гузориши огоҳкунӣ бомуваффақият нест карда шуд."
+
+#: payments/models.py:11
+msgid "Cash"
+msgstr "Нақд"
+
+#: payments/models.py:12
+msgid "Card"
+msgstr "Корт"
+
+#: payments/models.py:13
+msgid "Transfer"
+msgstr "Гузаронидан"
+
+#: payments/models.py:14
+msgid "Cheque"
+msgstr "Чек"
+
+#: payments/models.py:18
+msgid "Paid"
+msgstr "Пардохт шуд"
+
+#: payments/models.py:20
+msgid "Cancelled"
+msgstr "Бекор карда шуд"
+
+#: payments/models.py:21
+msgid "Refunded"
+msgstr "Баргардонида шуд"
+
+#: payments/models.py:34
+msgid "Amount"
+msgstr "Маблағ"
+
+#: payments/models.py:41
+msgid "Discount"
+msgstr "Таxфиф"
+
+#: payments/models.py:45
+msgid "Paid date"
+msgstr "Санаи пардохт"
+
+#: payments/models.py:51
+msgid "Payment method"
+msgstr "Усули пардохт"
+
+#: payments/models.py:77 payments/models.py:97
+msgid "Payment"
+msgstr "Пардохт"
+
+#: payments/models.py:78
+msgid "Payments"
+msgstr "Пардохтҳо"
+
+#: payments/models.py:88
+msgid "Created"
+msgstr "Сохта шуд"
+
+#: payments/models.py:89
+msgid "Updated"
+msgstr "Навсозӣ шуд"
+
+#: payments/models.py:90
+msgid "Deleted"
+msgstr "Нест карда шуд"
+
+#: payments/models.py:103
+msgid "Action"
+msgstr "Амал"
+
+#: payments/models.py:112
+msgid "Changed by"
+msgstr "Тағйир дода шуд аз ҷониби"
+
+#: payments/models.py:117
+msgid "Changed at"
+msgstr "Тағйир дода шуд"
+
+#: payments/models.py:123
+msgid "Old data"
+msgstr "Маълумоти кӯҳна"
+
+#: payments/models.py:129
+msgid "New data"
+msgstr "Маълумоти нав"
+
+#: payments/models.py:133
+msgid "Payment history"
+msgstr "Таърихи пардохт"
+
+#: payments/models.py:134
+msgid "Payment histories"
+msgstr "Таърихҳои пардохт"
+
+#: payments/models.py:154
+msgid "Total fees"
+msgstr "Ҳаҷми умумии пардохт"
+
+#: payments/models.py:163
+msgid "Student debt"
+msgstr "Қарзи донишҷӯ"
+
+#: payments/models.py:164
+msgid "Student debts"
+msgstr "Қарзҳои донишҷӯён"
+
+#: payments/permissions.py:6
+msgid "You do not have permission to view payments."
+msgstr "Шумо иҷозаи дидани пардохтҳоро надоред."
+
+#: payments/permissions.py:13
+msgid "You do not have permission to create payments."
+msgstr "Шумо иҷозаи сохтани пардохтҳоро надоред."
+
+#: payments/permissions.py:20
+msgid "You do not have permission to edit payments."
+msgstr "Шумо иҷозаи таҳрир кардани пардохтҳоро надоред."
+
+#: payments/permissions.py:27
+msgid "You do not have permission to delete payments."
+msgstr "Шумо иҷозаи нест кардани пардохтҳоро надоред."
+
+#: payments/permissions.py:34
+msgid "You do not have permission to view payment history."
+msgstr "Шумо иҷозаи дидани таърихи пардохтро надоред."
+
+#: payments/views.py:112
+msgid "Payment deleted successfully."
+msgstr "Пардохт бомуваффақият нест карда шуд."
+
+#: payments/views.py:215
+msgid "You can only view your own debt."
+msgstr "Шумо танҳо метавонед қарзи худатонро бинед."
+
+#: server/settings.py:168
+msgid "Internet Magazin API"
+msgstr "CRM API"
+
+#: server/settings.py:169
+msgid "API барои мағозаи мо"
+msgstr "API барои системаи идоракунии CRM"
+
+#: settings/models.py:14
+msgid "Logo"
+msgstr "Лого"
+
+#: settings/models.py:26
+msgid "Organization setting"
+msgstr "Танзимоти ташкилот"
+
+#: settings/models.py:27
+msgid "Organization settings"
+msgstr "Танзимоти ташкилот"
+
+#: settings/models.py:46
+msgid "Phone"
+msgstr "Телефон"
+
+#: settings/models.py:58 settings/models.py:70
+msgid "Branch"
+msgstr "Филиал"
+
+#: settings/models.py:59
+msgid "Branches"
+msgstr "Филиалҳо"
+
+#: settings/models.py:78
+msgid "Capacity"
+msgstr "Иқтидор"
+
+#: settings/models.py:91
+msgid "Rooms"
+msgstr "Ҳуҷраҳо"
+
+#: settings/models.py:100
+msgid "e.g. 1-пара, 2-пара"
+msgstr "мас. 1-ҷуфт, 2-ҷуфт"
+
+#: settings/models.py:101
+msgid "Label"
+msgstr "Нишон"
+
+#: settings/models.py:119
+msgid "Lesson time"
+msgstr "Вақти дарс"
+
+#: settings/models.py:120
+msgid "Lesson times"
+msgstr "Вақтҳои дарс"
+
+#: settings/models.py:130
+msgid "Host"
+msgstr "Хост"
+
+#: settings/models.py:134
+msgid "Port"
+msgstr "Порт"
+
+#: settings/models.py:138
+msgid "Use TLS"
+msgstr "Истифодаи TLS"
+
+#: settings/models.py:142
+msgid "Host user"
+msgstr "Истифодабарандаи хост"
+
+#: settings/models.py:146
+msgid "Host password"
+msgstr "Рамзи хост"
+
+#: settings/models.py:149
+msgid "From email"
+msgstr "Почтаи электронии фиристанда"
+
+#: settings/models.py:161
+msgid "SMTP setting"
+msgstr "Танзимоти SMTP"
+
+#: settings/models.py:162
+msgid "SMTP settings"
+msgstr "Танзимоти SMTP"
+
+#: settings/models.py:171
+msgid "Bot token"
+msgstr "Токени бот"
+
+#: settings/models.py:176
+msgid "Chat ID"
+msgstr "ID-и чат"
+
+#: settings/models.py:192
+msgid "Telegram bot setting"
+msgstr "Танзимоти боти Телеграм"
+
+#: settings/models.py:193
+msgid "Telegram bot settings"
+msgstr "Танзимоти ботҳои Телеграм"
+
+#: settings/models.py:201
+msgid "Daily"
+msgstr "Ҳаррӯза"
+
+#: settings/models.py:202
+msgid "Weekly"
+msgstr "Ҳарҳафтаина"
+
+#: settings/models.py:203
+msgid "Monthly"
+msgstr "Ҳармоҳа"
+
+#: settings/models.py:213
+msgid "Retention days"
+msgstr "Рӯзҳои нигоҳдорӣ"
+
+#: settings/models.py:217
+msgid "Is enabled"
+msgstr "Фаъол аст"
+
+#: settings/models.py:222
+msgid "Last backup at"
+msgstr "Нусхаи охирин"
+
+#: settings/models.py:234
+msgid "Backup setting"
+msgstr "Танзимоти нусхабардорӣ"
+
+#: settings/models.py:235
+msgid "Backup settings"
+msgstr "Танзимоти нусхабардорӣ"
+
+#: students/models.py:11 teachers/models.py:11
+msgid "Inactive"
+msgstr "Ғайрифаъол"
+
+#: students/models.py:23 teachers/models.py:23
+msgid "First name"
+msgstr "Ном"
+
+#: students/models.py:28 teachers/models.py:28
+msgid "Last name"
+msgstr "Насаб"
+
+#: students/permissions.py:6
+msgid "Only administrators can modify this resource."
+msgstr "Танҳо администраторон метавонанд ин манбаъро тағйир диҳанд."
+
+#: students/serializers.py:24 teachers/serializers.py:24
+msgid "Username"
+msgstr "Номи корбарӣ"
+
+#: students/serializers.py:68
+msgid "CRM Login"
+msgstr "Воридшавӣ ба CRM"
+
+#: students/serializers.py:70 teachers/serializers.py:71
+#, python-brace-format
+msgid ""
+"Your CRM account:\n"
+"\n"
+"Phone: {phone}\n"
+"Password: {password}\n"
+msgstr ""
+"Ҳисоби шумо дар CRM:\n"
+"\n"
+"Телефон: {phone}\n"
+"Рамз: {password}\n"
+
+#: teachers/models.py:34
+msgid "Speciality"
+msgstr "Ихтисос"
+
+#: teachers/models.py:52
+msgid "Teachers"
+msgstr "Омӯзгорон"
+
+#: teachers/serializers.py:69
+msgid "CRM Teacher Login"
+msgstr "Воридшавии омӯзгор ба CRM"

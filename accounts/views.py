@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
-from django.db.models import Q
 from django.shortcuts import get_object_or_404
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework import status
 from rest_framework.filters import SearchFilter
@@ -26,6 +26,7 @@ from .serializers import (
     LoginSerializer,
     LogoutSerializer,
     ProfileImageUpdateSerializer,
+    ProfileLanguageSerializer,
     ProfileSerializer,
     UserCreateSerializer,
     UserDetailSerializer,
@@ -65,7 +66,7 @@ class UserCreateAPIView(CreateAPIView):
 
         return Response(
             {
-                "detail": "Корбар сохта шуд ва маълумоти вуруд ба email фиристода шуд.",
+                "detail": _("User created successfully. Login information sent to email."),
                 "user": UserDetailSerializer(
                     user, context=self.get_serializer_context()
                 ).data,
@@ -91,14 +92,14 @@ class UserDeleteAPIView(DestroyAPIView):
 
         if user == request.user:
             return Response(
-                {"detail": "Шумо наметавонед аккаунти худро нест кунед."},
+                {"detail": _("You cannot delete your own account.")},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
         user.delete()
 
         return Response(
-            {"detail": "Корбар пурра нест карда шуд."},
+            {"detail": _("User deleted successfully.")},
             status=status.HTTP_204_NO_CONTENT,
         )
 
@@ -111,7 +112,7 @@ class ProfileAPIView(RetrieveAPIView):
         profile = getattr(self.request.user, "profile", None)
         if profile is None:
             from rest_framework.exceptions import NotFound
-            raise NotFound("Профил ёфт нашуд.")
+            raise NotFound(_("Profile not found."))
         return profile
 
 class ProfileImageUpdateAPIView(UpdateAPIView):
@@ -124,7 +125,7 @@ class ProfileImageUpdateAPIView(UpdateAPIView):
         profile = getattr(self.request.user, "profile", None)
         if profile is None:
             from rest_framework.exceptions import NotFound
-            raise NotFound("Профил ёфт нашуд.")
+            raise NotFound(_("Profile not found."))
         return profile
 
 
@@ -165,7 +166,7 @@ class LogoutAPIView(GenericAPIView):
         serializer.save()
 
         return Response(
-            {"detail": "Шумо бомуваффақият баромадед."},
+            {"detail": _("You have been logged out successfully.")},
             status=status.HTTP_200_OK,
         )
 
@@ -193,7 +194,7 @@ class ChangePasswordAPIView(GenericAPIView):
                 pass
 
         return Response(
-            {"detail": "Парол бомуваффақият иваз шуд. Лутфан дубора ворид шавед."},
+            {"detail": _("Password changed successfully. Please login again.")},
             status=status.HTTP_200_OK,
         )
 
@@ -209,7 +210,7 @@ class ChangeRoleAPIView(GenericAPIView):
 
         if user == request.user:
             return Response(
-                {"detail": "Шумо наметавонед нақши худро иваз кунед."},
+                {"detail": _("You cannot change your own role.")},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
@@ -219,9 +220,33 @@ class ChangeRoleAPIView(GenericAPIView):
 
         return Response(
             {
-                "detail": f"Нақши корбар ба «{user.get_role_display()}» иваз шуд.",
+                "detail": _("User role changed to {}.").format(user.get_role_display()),
                 "user_id": user.id,
                 "new_role": user.role,
             },
+            status=status.HTTP_200_OK,
+        )
+
+
+class ProfileLanguageAPIView(GenericAPIView):
+    serializer_class = ProfileLanguageSerializer
+    permission_classes = [IsAuthenticated]
+    http_method_names = ["patch"]
+
+    def get_object(self):
+        profile = getattr(self.request.user, "profile", None)
+        if profile is None:
+            from rest_framework.exceptions import NotFound
+            raise NotFound(_("Profile not found."))
+        return profile
+
+    def patch(self, request, *args, **kwargs):
+        profile = self.get_object()
+        serializer = self.get_serializer(profile, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(
+            {"detail": _("Language updated successfully."),
+             "language": profile.language},
             status=status.HTTP_200_OK,
         )

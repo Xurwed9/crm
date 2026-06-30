@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.generics import (
@@ -95,7 +96,7 @@ class ExamCreateAPIView(CreateAPIView):
 
             if lesson.group.teacher != user:
                 raise PermissionDenied(
-                    "You can only create exams for your own lessons."
+                    _("You can only create exams for your own lessons.")
                 )
 
         serializer.save()
@@ -134,7 +135,7 @@ class ExamDeleteAPIView(DestroyAPIView):
         exam.delete()
 
         return Response(
-            {"detail": "Exam deleted successfully."},
+            {"detail": _("Exam deleted successfully.")},
             status=status.HTTP_200_OK,
         )
 
@@ -204,7 +205,7 @@ class ExamResultCreateAPIView(CreateAPIView):
 
             if exam.lesson.group.teacher != user:
                 raise PermissionDenied(
-                    "You can only enter results for your own exams."
+                    _("You can only enter results for your own exams.")
                 )
 
         serializer.save()
@@ -245,6 +246,6 @@ class ExamResultDeleteAPIView(DestroyAPIView):
         result.delete()
 
         return Response(
-            {"detail": "Exam result deleted successfully."},
+            {"detail": _("Exam result deleted successfully.")},
             status=status.HTTP_200_OK,
         )

@@ -1,0 +1,1358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-30 23:57+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: CRM Team <noreply@crm.local>\n"
+"Language-Team: Русский <noreply@crm.local>\n"
+"Language: Русский\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: accounts/admin.py:11 accounts/models.py:84
+msgid "Profile"
+msgstr "Профиль"
+
+#: accounts/admin.py:12 accounts/models.py:85
+msgid "Profiles"
+msgstr "Профили"
+
+#: accounts/admin.py:44 accounts/admin.py:63
+msgid "Additional Information"
+msgstr "Дополнительная информация"
+
+#: accounts/models.py:8
+msgid "Admin"
+msgstr "Администратор"
+
+#: accounts/models.py:9 grades/models.py:32 groups/models.py:36
+#: lessons/models.py:44 teachers/models.py:51
+msgid "Teacher"
+msgstr "Преподаватель"
+
+#: accounts/models.py:10 attendance/models.py:28 exams/models.py:86
+#: grades/models.py:22 homework/models.py:66 payments/models.py:28
+#: payments/models.py:147 students/models.py:51
+msgid "Student"
+msgstr "Студент"
+
+#: accounts/models.py:16
+msgid "Role"
+msgstr "Роль"
+
+#: accounts/models.py:22 accounts/serializers.py:217 students/serializers.py:28
+#: teachers/serializers.py:28
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: accounts/models.py:26 attendance/models.py:50 courses/models.py:28
+#: exams/models.py:42 exams/models.py:100 grades/models.py:46
+#: groups/models.py:79 homework/models.py:41 journal/models.py:30
+#: lessons/models.py:89 notifications/models.py:116 payments/models.py:68
+#: settings/models.py:18 settings/models.py:50 settings/models.py:82
+#: settings/models.py:111 settings/models.py:153 settings/models.py:184
+#: settings/models.py:226
+msgid "Created at"
+msgstr "Создано"
+
+#: accounts/models.py:30 courses/models.py:32 exams/models.py:47
+#: exams/models.py:105 groups/models.py:84 journal/models.py:35
+#: lessons/models.py:94 payments/models.py:73 payments/models.py:159
+#: settings/models.py:22 settings/models.py:54 settings/models.py:86
+#: settings/models.py:115 settings/models.py:157 settings/models.py:188
+#: settings/models.py:230
+msgid "Updated at"
+msgstr "Обновлено"
+
+#: accounts/models.py:36 accounts/models.py:54 notifications/models.py:13
+#: students/models.py:18 teachers/models.py:18
+msgid "User"
+msgstr "Пользователь"
+
+#: accounts/models.py:37
+msgid "Users"
+msgstr "Пользователи"
+
+#: accounts/models.py:45
+msgid "Tajik"
+msgstr "Таджикский"
+
+#: accounts/models.py:46
+msgid "Russian"
+msgstr "Русский"
+
+#: accounts/models.py:47
+msgid "English"
+msgstr "Английский"
+
+#: accounts/models.py:60
+msgid "Image"
+msgstr "Изображение"
+
+#: accounts/models.py:65 settings/models.py:41 students/models.py:40
+#: teachers/models.py:40
+msgid "Address"
+msgstr "Адрес"
+
+#: accounts/models.py:69
+msgid "Biography"
+msgstr "Биография"
+
+#: accounts/models.py:74 students/models.py:34
+msgid "Birth date"
+msgstr "Дата рождения"
+
+#: accounts/models.py:80
+msgid "Language"
+msgstr "Язык"
+
+#: accounts/permissions.py:6 courses/permissions.py:7 courses/permissions.py:47
+#: groups/permissions.py:6 notifications/views.py:23 reports/views.py:23
+#: teachers/permissions.py:6
+msgid "Only administrators can perform this action."
+msgstr "Только администраторы могут выполнять это действие."
+
+#: accounts/permissions.py:16 courses/permissions.py:17
+#: groups/permissions.py:16
+msgid "Only teachers can perform this action."
+msgstr "Только преподаватели могут выполнять это действие."
+
+#: accounts/permissions.py:26 courses/permissions.py:27
+#: groups/permissions.py:26
+msgid "Only students can perform this action."
+msgstr "Только студенты могут выполнять это действие."
+
+#: accounts/permissions.py:36 courses/permissions.py:37
+msgid "Only administrators and teachers can perform this action."
+msgstr "Только администраторы и преподаватели могут выполнять это действие."
+
+#: accounts/permissions.py:46
+msgid "You can only access your own data."
+msgstr "Вы можете получить доступ только к своим данным."
+
+#: accounts/serializers.py:143
+msgid "CRM Login Information"
+msgstr "Информация для входа в CRM"
+
+#: accounts/serializers.py:145
+#, python-brace-format
+msgid ""
+"Hello {first_name} {last_name},\n"
+"\n"
+"Your CRM account has been created.\n"
+"\n"
+"Login (Phone): {phone_number}\n"
+"Password: {password}\n"
+"\n"
+msgstr ""
+"Здравствуйте {first_name} {last_name},\n"
+"\n"
+"Ваша учетная запись в CRM создана.\n"
+"\n"
+"Вход (Телефон): {phone_number}\n"
+"Пароль: {password}\n"
+"\n"
+
+#: accounts/serializers.py:221
+msgid "Password"
+msgstr "Пароль"
+
+#: accounts/serializers.py:231
+msgid "Phone number or password is incorrect."
+msgstr "Неверный номер телефона или пароль."
+
+#: accounts/serializers.py:234
+msgid "User is inactive."
+msgstr "Пользователь неактивен."
+
+#: accounts/serializers.py:242
+msgid "Old password"
+msgstr "Старый пароль"
+
+#: accounts/serializers.py:247
+msgid "New password"
+msgstr "Новый пароль"
+
+#: accounts/serializers.py:253
+msgid "Password is incorrect."
+msgstr "Неверный пароль."
+
+#: accounts/serializers.py:264
+msgid "Refresh token"
+msgstr "Токен обновления"
+
+#: accounts/serializers.py:272
+msgid "Invalid or expired refresh token."
+msgstr "Недействительный или просроченный токен обновления."
+
+#: accounts/views.py:69
+msgid "User created successfully. Login information sent to email."
+msgstr "Пользователь успешно создан. Информация для входа отправлена на email."
+
+#: accounts/views.py:95
+msgid "You cannot delete your own account."
+msgstr "Вы не можете удалить свою собственную учетную запись."
+
+#: accounts/views.py:102
+msgid "User deleted successfully."
+msgstr "Пользователь успешно удален."
+
+#: accounts/views.py:115 accounts/views.py:128 accounts/views.py:240
+msgid "Profile not found."
+msgstr "Профиль не найден."
+
+#: accounts/views.py:169
+msgid "You have been logged out successfully."
+msgstr "Вы успешно вышли из системы."
+
+#: accounts/views.py:197
+msgid "Password changed successfully. Please login again."
+msgstr "Пароль успешно изменен. Пожалуйста, войдите снова."
+
+#: accounts/views.py:213
+msgid "You cannot change your own role."
+msgstr "Вы не можете изменить свою собственную роль."
+
+#: accounts/views.py:223
+#, python-brace-format
+msgid "User role changed to {}."
+msgstr "Роль пользователя изменена на {}."
+
+#: accounts/views.py:249
+msgid "Language updated successfully."
+msgstr "Язык успешно обновлен."
+
+#: attendance/models.py:11
+msgid "Present"
+msgstr "Присутствует"
+
+#: attendance/models.py:12
+msgid "Absent"
+msgstr "Отсутствует"
+
+#: attendance/models.py:13
+msgid "Late"
+msgstr "Опоздал"
+
+#: attendance/models.py:14
+msgid "Excused"
+msgstr "По уважительной причине"
+
+#: attendance/models.py:21 exams/models.py:15 grades/models.py:15
+#: homework/models.py:15 journal/models.py:14 lessons/models.py:98
+msgid "Lesson"
+msgstr "Занятие"
+
+#: attendance/models.py:35 groups/models.py:74 lessons/models.py:84
+#: notifications/models.py:100 payments/models.py:58 students/models.py:47
+#: teachers/models.py:47
+msgid "Status"
+msgstr "Статус"
+
+#: attendance/models.py:40
+msgid "Reason"
+msgstr "Причина"
+
+#: attendance/models.py:45 exams/models.py:95 grades/models.py:41
+#: payments/models.py:63
+msgid "Comment"
+msgstr "Комментарий"
+
+#: attendance/models.py:54
+msgid "Attendance"
+msgstr "Посещаемость"
+
+#: attendance/models.py:55
+msgid "Attendances"
+msgstr "Записи посещаемости"
+
+#: attendance/permissions.py:6
+msgid "You do not have permission to view attendance records."
+msgstr "У вас нет прав для просмотра записей посещаемости."
+
+#: attendance/permissions.py:13
+msgid "You do not have permission to create attendance records."
+msgstr "У вас нет прав для создания записей посещаемости."
+
+#: attendance/permissions.py:20
+msgid "You do not have permission to edit attendance records."
+msgstr "У вас нет прав для редактирования записей посещаемости."
+
+#: attendance/permissions.py:27
+msgid "You do not have permission to delete attendance records."
+msgstr "У вас нет прав для удаления записей посещаемости."
+
+#: attendance/serializers.py:32 exams/serializers.py:32
+#: grades/serializers.py:33 payments/serializers.py:27
+#, python-brace-format
+msgid "Student with name '{}' not found. Use 'First Last' format."
+msgstr "Студент с именем '{}' не найден. Используйте формат 'Имя Фамилия'."
+
+#: attendance/views.py:98
+msgid "You can only mark attendance for your own lessons."
+msgstr "Вы можете отмечать посещаемость только для своих занятий."
+
+#: attendance/views.py:141
+msgid "Attendance record deleted successfully."
+msgstr "Запись посещаемости успешно удалена."
+
+#: courses/admin.py:38
+msgid "Course Information"
+msgstr "Информация о курсе"
+
+#: courses/admin.py:44
+msgid "Course Details"
+msgstr "Детали курса"
+
+#: courses/admin.py:51
+msgid "System Information"
+msgstr "Системная информация"
+
+#: courses/models.py:8 groups/models.py:19 settings/models.py:8
+#: settings/models.py:36 settings/models.py:74
+msgid "Name"
+msgstr "Название"
+
+#: courses/models.py:12 exams/models.py:25 homework/models.py:25
+#: lessons/models.py:70
+msgid "Description"
+msgstr "Описание"
+
+#: courses/models.py:17
+msgid "Price"
+msgstr "Цена"
+
+#: courses/models.py:20
+msgid "Duration (months)"
+msgstr "Длительность (мес.)"
+
+#: courses/models.py:24 settings/models.py:180
+msgid "Is active"
+msgstr "Активен"
+
+#: courses/models.py:36 groups/models.py:26 lessons/models.py:34
+msgid "Course"
+msgstr "Курс"
+
+#: courses/models.py:37
+msgid "Courses"
+msgstr "Курсы"
+
+#: courses/permissions.py:60
+msgid "Only teachers can modify this resource."
+msgstr "Только преподаватели могут изменять этот ресурс."
+
+#: dashboard/views.py:229
+msgid "Student profile not found."
+msgstr "Профиль студента не найден."
+
+#: exams/models.py:20 homework/models.py:20
+msgid "Title"
+msgstr "Название"
+
+#: exams/models.py:29
+msgid "Maximum score"
+msgstr "Максимальный балл"
+
+#: exams/models.py:33
+msgid "Passing score"
+msgstr "Проходной балл"
+
+#: exams/models.py:37
+msgid "Date"
+msgstr "Дата"
+
+#: exams/models.py:51 exams/models.py:79 lessons/models.py:13
+msgid "Exam"
+msgstr "Экзамен"
+
+#: exams/models.py:52
+msgid "Exams"
+msgstr "Экзамены"
+
+#: exams/models.py:58 exams/serializers.py:92
+msgid "Exam can only be created for lessons with type 'exam'."
+msgstr "Экзамен может быть создан только для занятий типа 'экзамен'."
+
+#: exams/models.py:62 exams/serializers.py:99
+msgid "Passing score cannot be greater than maximum score."
+msgstr "Проходной балл не может превышать максимальный балл."
+
+#: exams/models.py:90
+msgid "Score"
+msgstr "Балл"
+
+#: exams/models.py:109
+msgid "Exam result"
+msgstr "Результат экзамена"
+
+#: exams/models.py:110
+msgid "Exam results"
+msgstr "Результаты экзаменов"
+
+#: exams/models.py:117 exams/serializers.py:163
+#, python-brace-format
+msgid "Score cannot exceed maximum score ({max_score})."
+msgstr "Балл не может превышать максимальный ({max_score})."
+
+#: exams/permissions.py:6
+msgid "You do not have permission to view exams."
+msgstr "У вас нет прав для просмотра экзаменов."
+
+#: exams/permissions.py:13
+msgid "You do not have permission to create exams."
+msgstr "У вас нет прав для создания экзаменов."
+
+#: exams/permissions.py:20
+msgid "You do not have permission to edit exams."
+msgstr "У вас нет прав для редактирования экзаменов."
+
+#: exams/permissions.py:27
+msgid "You do not have permission to delete exams."
+msgstr "У вас нет прав для удаления экзаменов."
+
+#: exams/permissions.py:34
+msgid "You do not have permission to view exam results."
+msgstr "У вас нет прав для просмотра результатов экзаменов."
+
+#: exams/permissions.py:41
+msgid "You do not have permission to create exam results."
+msgstr "У вас нет прав для создания результатов экзаменов."
+
+#: exams/permissions.py:48
+msgid "You do not have permission to edit exam results."
+msgstr "У вас нет прав для редактирования результатов экзаменов."
+
+#: exams/permissions.py:55
+msgid "You do not have permission to delete exam results."
+msgstr "У вас нет прав для удаления результатов экзаменов."
+
+#: exams/views.py:99
+msgid "You can only create exams for your own lessons."
+msgstr "Вы можете создавать экзамены только для своих занятий."
+
+#: exams/views.py:138
+msgid "Exam deleted successfully."
+msgstr "Экзамен успешно удален."
+
+#: exams/views.py:208
+msgid "You can only enter results for your own exams."
+msgstr "Вы можете вводить результаты только для своих экзаменов."
+
+#: exams/views.py:249
+msgid "Exam result deleted successfully."
+msgstr "Результат экзамена успешно удален."
+
+#: grades/models.py:36 grades/models.py:50 homework/models.py:79
+msgid "Grade"
+msgstr "Оценка"
+
+#: grades/models.py:51
+msgid "Grades"
+msgstr "Оценки"
+
+#: grades/permissions.py:6
+msgid "You do not have permission to view grades."
+msgstr "У вас нет прав для просмотра оценок."
+
+#: grades/permissions.py:13
+msgid "You do not have permission to create grades."
+msgstr "У вас нет прав для выставления оценок."
+
+#: grades/permissions.py:20
+msgid "You do not have permission to edit grades."
+msgstr "У вас нет прав для редактирования оценок."
+
+#: grades/permissions.py:27
+msgid "You do not have permission to delete grades."
+msgstr "У вас нет прав для удаления оценок."
+
+#: grades/views.py:98
+msgid "You can only grade your own lessons."
+msgstr "Вы можете оценивать только свои занятия."
+
+#: grades/views.py:143
+msgid "Grade deleted successfully."
+msgstr "Оценка успешно удалена."
+
+#: groups/models.py:11 students/models.py:10 teachers/models.py:10
+msgid "Active"
+msgstr "Активный"
+
+#: groups/models.py:12 lessons/models.py:20
+msgid "Finished"
+msgstr "Завершен"
+
+#: groups/models.py:13
+msgid "Closed"
+msgstr "Закрыт"
+
+#: groups/models.py:42 groups/serializers.py:81 students/models.py:52
+msgid "Students"
+msgstr "Студенты"
+
+#: groups/models.py:46
+msgid "Start date"
+msgstr "Дата начала"
+
+#: groups/models.py:50
+msgid "End date"
+msgstr "Дата окончания"
+
+#: groups/models.py:55
+msgid "Mon Wed Fri 18:00-20:00"
+msgstr "Пн Ср Пт 18:00-20:00"
+
+#: groups/models.py:56 settings/models.py:209
+msgid "Schedule"
+msgstr "Расписание"
+
+#: groups/models.py:62 settings/models.py:90
+msgid "Room"
+msgstr "Кабинет"
+
+#: groups/models.py:67
+msgid "Maximum students"
+msgstr "Максимум студентов"
+
+#: groups/models.py:88 lessons/models.py:27
+msgid "Group"
+msgstr "Группа"
+
+#: groups/models.py:89
+msgid "Groups"
+msgstr "Группы"
+
+#: groups/serializers.py:79
+msgid "Course name"
+msgstr "Название курса"
+
+#: groups/serializers.py:80
+msgid "Teacher full name"
+msgstr "ФИО преподавателя"
+
+#: groups/serializers.py:103
+#, python-brace-format
+msgid "Full name must contain first and last name. Got: '{}'"
+msgstr "Полное имя должно содержать имя и фамилию. Получено: '{}'"
+
+#: groups/serializers.py:110
+#, python-brace-format
+msgid "Course with name '{}' does not exist."
+msgstr "Курс с названием '{}' не существует."
+
+#: groups/serializers.py:122
+#, python-brace-format
+msgid "Teacher with full name '{}' and role 'teacher' does not exist."
+msgstr "Преподаватель с ФИО '{}' и ролью 'преподаватель' не существует."
+
+#: groups/serializers.py:135
+#, python-brace-format
+msgid "Student with full name '{}' does not exist."
+msgstr "Студент с ФИО '{}' не существует."
+
+#: groups/views.py:78
+msgid "Group deleted successfully."
+msgstr "Группа успешно удалена."
+
+#: homework/models.py:29
+msgid "Deadline"
+msgstr "Срок сдачи"
+
+#: homework/models.py:36
+msgid "Attachment"
+msgstr "Вложение"
+
+#: homework/models.py:45 homework/models.py:59
+msgid "Homework"
+msgstr "Домашнее задание"
+
+#: homework/models.py:46
+msgid "Homeworks"
+msgstr "Домашние задания"
+
+#: homework/models.py:73
+msgid "Answer"
+msgstr "Ответ"
+
+#: homework/models.py:84
+msgid "Feedback"
+msgstr "Отзыв"
+
+#: homework/models.py:89
+msgid "Submitted at"
+msgstr "Отправлено"
+
+#: homework/models.py:95
+msgid "Graded at"
+msgstr "Оценено"
+
+#: homework/models.py:99
+msgid "Submission"
+msgstr "Отправка"
+
+#: homework/models.py:100
+msgid "Submissions"
+msgstr "Отправки"
+
+#: homework/permissions.py:6
+msgid "You do not have permission to access this resource."
+msgstr "У вас нет прав для доступа к этому ресурсу."
+
+#: homework/permissions.py:15
+msgid "You do not have permission to view homework."
+msgstr "У вас нет прав для просмотра домашних заданий."
+
+#: homework/permissions.py:37
+msgid "You do not have permission to create homework."
+msgstr "У вас нет прав для создания домашних заданий."
+
+#: homework/permissions.py:49
+msgid "You do not have permission to edit homework."
+msgstr "У вас нет прав для редактирования домашних заданий."
+
+#: homework/permissions.py:73
+msgid "You do not have permission to delete homework."
+msgstr "У вас нет прав для удаления домашних заданий."
+
+#: homework/permissions.py:83
+msgid "You do not have permission to view submissions."
+msgstr "У вас нет прав для просмотра отправок."
+
+#: homework/permissions.py:105
+msgid "You do not have permission to create submissions."
+msgstr "У вас нет прав для создания отправок."
+
+#: homework/permissions.py:115
+msgid "You do not have permission to grade submissions."
+msgstr "У вас нет прав для оценки отправок."
+
+#: homework/permissions.py:139
+msgid "You do not have permission to delete submissions."
+msgstr "У вас нет прав для удаления отправок."
+
+#: homework/views.py:123
+msgid "Homework deleted successfully."
+msgstr "Домашнее задание успешно удалено."
+
+#: homework/views.py:184
+msgid "Student profile not found. Please contact admin."
+msgstr "Профиль студента не найден. Пожалуйста, свяжитесь с администратором."
+
+#: homework/views.py:223
+msgid "Submission deleted successfully."
+msgstr "Отправка успешно удалена."
+
+#: journal/models.py:21
+msgid "Author"
+msgstr "Автор"
+
+#: journal/models.py:25
+msgid "Content"
+msgstr "Содержание"
+
+#: journal/models.py:39
+msgid "Journal comment"
+msgstr "Комментарий журнала"
+
+#: journal/models.py:40
+msgid "Journal comments"
+msgstr "Комментарии журнала"
+
+#: journal/permissions.py:6
+msgid "You do not have permission to view the journal."
+msgstr "У вас нет прав для просмотра журнала."
+
+#: journal/permissions.py:28
+msgid "You do not have permission to create journal comments."
+msgstr "У вас нет прав для создания комментариев в журнале."
+
+#: journal/permissions.py:35
+msgid "You do not have permission to edit journal comments."
+msgstr "У вас нет прав для редактирования комментариев в журнале."
+
+#: journal/permissions.py:51
+msgid "You do not have permission to delete journal comments."
+msgstr "У вас нет прав для удаления комментариев из журнала."
+
+#: journal/views.py:250 journal/views.py:256
+msgid "You can only comment on your own lessons."
+msgstr "Вы можете комментировать только свои занятия."
+
+#: journal/views.py:288
+msgid "Comment deleted successfully."
+msgstr "Комментарий успешно удален."
+
+#: lessons/models.py:12
+msgid "Normal"
+msgstr "Обычный"
+
+#: lessons/models.py:14
+msgid "Result"
+msgstr "Результат"
+
+#: lessons/models.py:18
+msgid "Planned"
+msgstr "Запланирован"
+
+#: lessons/models.py:19
+msgid "In Progress"
+msgstr "В процессе"
+
+#: lessons/models.py:48
+msgid "Lesson number"
+msgstr "Номер занятия"
+
+#: lessons/models.py:52
+msgid "Lesson date"
+msgstr "Дата занятия"
+
+#: lessons/models.py:56 settings/models.py:104
+msgid "Start time"
+msgstr "Время начала"
+
+#: lessons/models.py:60 settings/models.py:107
+msgid "End time"
+msgstr "Время окончания"
+
+#: lessons/models.py:65
+msgid "Topic"
+msgstr "Тема"
+
+#: lessons/models.py:77
+msgid "Lesson type"
+msgstr "Тип занятия"
+
+#: lessons/models.py:99
+msgid "Lessons"
+msgstr "Занятия"
+
+#: lessons/permissions.py:6
+msgid "You do not have permission to view lessons."
+msgstr "У вас нет прав для просмотра занятий."
+
+#: lessons/permissions.py:13
+msgid "You do not have permission to create lessons."
+msgstr "У вас нет прав для создания занятий."
+
+#: lessons/permissions.py:20
+msgid "You do not have permission to edit lessons."
+msgstr "У вас нет прав для редактирования занятий."
+
+#: lessons/permissions.py:27
+msgid "You do not have permission to delete lessons."
+msgstr "У вас нет прав для удаления занятий."
+
+#: lessons/views.py:128
+msgid "Lesson deleted successfully."
+msgstr "Занятие успешно удалено."
+
+#: lessons/views.py:149
+msgid "Group not found."
+msgstr "Группа не найдена."
+
+#: lessons/views.py:156
+msgid "You can only generate lessons for your own groups."
+msgstr "Вы можете генерировать занятия только для своих групп."
+
+#: lessons/views.py:164
+#, python-brace-format
+msgid "{} lessons generated successfully."
+msgstr "{} занятий успешно создано."
+
+#: notifications/models.py:18
+msgid "Email enabled"
+msgstr "Email включен"
+
+#: notifications/models.py:23
+msgid "SMS enabled"
+msgstr "SMS включено"
+
+#: notifications/models.py:28
+msgid "Telegram enabled"
+msgstr "Telegram включен"
+
+#: notifications/models.py:34
+msgid "Telegram chat ID"
+msgstr "ID чата Telegram"
+
+#: notifications/models.py:38
+msgid "Notification setting"
+msgstr "Настройка уведомлений"
+
+#: notifications/models.py:39
+msgid "Notification settings"
+msgstr "Настройки уведомлений"
+
+#: notifications/models.py:48
+msgid "User Created"
+msgstr "Пользователь создан"
+
+#: notifications/models.py:49
+msgid "Homework Assigned"
+msgstr "Задано домашнее задание"
+
+#: notifications/models.py:50
+msgid "Exam Scheduled"
+msgstr "Назначен экзамен"
+
+#: notifications/models.py:51 notifications/services.py:49
+msgid "Payment Reminder"
+msgstr "Напоминание об оплате"
+
+#: notifications/models.py:52
+msgid "Absent Notification"
+msgstr "Уведомление об отсутствии"
+
+#: notifications/models.py:53
+msgid "Custom"
+msgstr "Пользовательский"
+
+#: notifications/models.py:57 students/serializers.py:20
+#: teachers/serializers.py:20
+msgid "Email"
+msgstr "Электронная почта"
+
+#: notifications/models.py:58
+msgid "SMS"
+msgstr "SMS"
+
+#: notifications/models.py:59
+msgid "Telegram"
+msgstr "Telegram"
+
+#: notifications/models.py:63
+msgid "Sent"
+msgstr "Отправлено"
+
+#: notifications/models.py:64
+msgid "Failed"
+msgstr "Не удалось"
+
+#: notifications/models.py:65 payments/models.py:19
+msgid "Pending"
+msgstr "В ожидании"
+
+#: notifications/models.py:71 notifications/serializers.py:81
+msgid "Event type"
+msgstr "Тип события"
+
+#: notifications/models.py:77
+msgid "Channel"
+msgstr "Канал"
+
+#: notifications/models.py:84
+msgid "Recipient"
+msgstr "Получатель"
+
+#: notifications/models.py:89
+msgid "Subject"
+msgstr "Тема"
+
+#: notifications/models.py:93
+msgid "Body"
+msgstr "Текст"
+
+#: notifications/models.py:106
+msgid "Sent at"
+msgstr "Отправлено"
+
+#: notifications/models.py:111
+msgid "Error message"
+msgstr "Сообщение об ошибке"
+
+#: notifications/models.py:120
+msgid "Notification log"
+msgstr "Журнал уведомлений"
+
+#: notifications/models.py:121
+msgid "Notification logs"
+msgstr "Журналы уведомлений"
+
+#: notifications/serializers.py:84
+msgid "Recipient ID"
+msgstr "ID получателя"
+
+#: notifications/serializers.py:88
+msgid "Channels"
+msgstr "Каналы"
+
+#: notifications/serializers.py:90
+msgid "Extra data"
+msgstr "Дополнительные данные"
+
+#: notifications/serializers.py:95
+msgid "User does not exist."
+msgstr "Пользователь не существует."
+
+#: notifications/services.py:16
+msgid "Welcome to CRM System"
+msgstr "Добро пожаловать в CRM систему"
+
+#: notifications/services.py:18
+#, python-brace-format
+msgid ""
+"Hello {first_name} {last_name},\n"
+"\n"
+"Your account has been created successfully.\n"
+"\n"
+"Username: {username}\n"
+"Role: {role}\n"
+"Phone: {phone_number}"
+msgstr ""
+"Здравствуйте {first_name} {last_name},\n"
+"\n"
+"Ваша учетная запись в CRM успешно создана.\n"
+"\n"
+"Имя пользователя: {username}\n"
+"Роль: {role}\n"
+"Телефон: {phone_number}"
+
+#: notifications/services.py:26
+#, python-brace-format
+msgid "New Homework: {title}"
+msgstr "Новое домашнее задание: {title}"
+
+#: notifications/services.py:28
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"New homework has been assigned.\n"
+"\n"
+"Lesson: {lesson_topic}\n"
+"Homework: {title}\n"
+"Deadline: {deadline}\n"
+"\n"
+"{description}"
+msgstr ""
+"Здравствуйте {first_name},\n"
+"\n"
+"Назначено новое домашнее задание.\n"
+"\n"
+"Занятие: {lesson_topic}\n"
+"Задание: {title}\n"
+"Срок: {deadline}\n"
+"\n"
+"{description}"
+
+#: notifications/services.py:37
+#, python-brace-format
+msgid "Exam Scheduled: {title}"
+msgstr "Назначен экзамен: {title}"
+
+#: notifications/services.py:39
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"An exam has been scheduled.\n"
+"\n"
+"Lesson: {lesson_topic}\n"
+"Exam: {title}\n"
+"Date: {date}\n"
+"Maximum Score: {maximum_score}\n"
+"Passing Score: {passing_score}"
+msgstr ""
+"Здравствуйте {first_name},\n"
+"\n"
+"Назначен экзамен.\n"
+"\n"
+"Занятие: {lesson_topic}\n"
+"Экзамен: {title}\n"
+"Дата: {date}\n"
+"Максимальный балл: {maximum_score}\n"
+"Проходной балл: {passing_score}"
+
+#: notifications/services.py:51
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"This is a reminder about your pending payment.\n"
+"\n"
+"Amount: {amount}\n"
+"Due Date: {due_date}\n"
+"\n"
+"Please make the payment at your earliest convenience."
+msgstr ""
+"Здравствуйте {first_name},\n"
+"\n"
+"Это напоминание о вашем ожидающем платеже.\n"
+"\n"
+"Сумма: {amount}\n"
+"Срок оплаты: {due_date}\n"
+"\n"
+"Пожалуйста, произведите оплату при первой возможности."
+
+#: notifications/services.py:59
+msgid "Absence Notification"
+msgstr "Уведомление об отсутствии"
+
+#: notifications/services.py:61
+#, python-brace-format
+msgid ""
+"Hello {first_name},\n"
+"\n"
+"You were marked absent for the following lesson:\n"
+"\n"
+"Date: {lesson_date}\n"
+"Lesson: {lesson_topic}\n"
+"Group: {group_name}\n"
+"\n"
+"Please contact your teacher for more information."
+msgstr ""
+"Здравствуйте {first_name},\n"
+"\n"
+"Вы были отмечены как отсутствующий на следующем занятии:\n"
+"\n"
+"Дата: {lesson_date}\n"
+"Занятие: {lesson_topic}\n"
+"Группа: {group_name}\n"
+"\n"
+"Пожалуйста, свяжитесь с преподавателем для получения дополнительной информации."
+
+#: notifications/services.py:70
+#, python-brace-format
+msgid "{subject}"
+msgstr "{subject}"
+
+#: notifications/services.py:71
+#, python-brace-format
+msgid "{message}"
+msgstr "{message}"
+
+#: notifications/views.py:64
+msgid "No enabled channels available for this recipient."
+msgstr "Для этого получателя нет доступных включенных каналов."
+
+#: notifications/views.py:105
+msgid "Notification log deleted successfully."
+msgstr "Запись журнала уведомлений успешно удалена."
+
+#: payments/models.py:11
+msgid "Cash"
+msgstr "Наличные"
+
+#: payments/models.py:12
+msgid "Card"
+msgstr "Карта"
+
+#: payments/models.py:13
+msgid "Transfer"
+msgstr "Перевод"
+
+#: payments/models.py:14
+msgid "Cheque"
+msgstr "Чек"
+
+#: payments/models.py:18
+msgid "Paid"
+msgstr "Оплачено"
+
+#: payments/models.py:20
+msgid "Cancelled"
+msgstr "Отменен"
+
+#: payments/models.py:21
+msgid "Refunded"
+msgstr "Возвращен"
+
+#: payments/models.py:34
+msgid "Amount"
+msgstr "Сумма"
+
+#: payments/models.py:41
+msgid "Discount"
+msgstr "Скидка"
+
+#: payments/models.py:45
+msgid "Paid date"
+msgstr "Дата оплаты"
+
+#: payments/models.py:51
+msgid "Payment method"
+msgstr "Способ оплаты"
+
+#: payments/models.py:77 payments/models.py:97
+msgid "Payment"
+msgstr "Платеж"
+
+#: payments/models.py:78
+msgid "Payments"
+msgstr "Платежи"
+
+#: payments/models.py:88
+msgid "Created"
+msgstr "Создан"
+
+#: payments/models.py:89
+msgid "Updated"
+msgstr "Обновлен"
+
+#: payments/models.py:90
+msgid "Deleted"
+msgstr "Удален"
+
+#: payments/models.py:103
+msgid "Action"
+msgstr "Действие"
+
+#: payments/models.py:112
+msgid "Changed by"
+msgstr "Изменено"
+
+#: payments/models.py:117
+msgid "Changed at"
+msgstr "Время изменения"
+
+#: payments/models.py:123
+msgid "Old data"
+msgstr "Старые данные"
+
+#: payments/models.py:129
+msgid "New data"
+msgstr "Новые данные"
+
+#: payments/models.py:133
+msgid "Payment history"
+msgstr "История платежей"
+
+#: payments/models.py:134
+msgid "Payment histories"
+msgstr "Истории платежей"
+
+#: payments/models.py:154
+msgid "Total fees"
+msgstr "Общая сумма"
+
+#: payments/models.py:163
+msgid "Student debt"
+msgstr "Долг студента"
+
+#: payments/models.py:164
+msgid "Student debts"
+msgstr "Долги студентов"
+
+#: payments/permissions.py:6
+msgid "You do not have permission to view payments."
+msgstr "У вас нет прав для просмотра платежей."
+
+#: payments/permissions.py:13
+msgid "You do not have permission to create payments."
+msgstr "У вас нет прав для создания платежей."
+
+#: payments/permissions.py:20
+msgid "You do not have permission to edit payments."
+msgstr "У вас нет прав для редактирования платежей."
+
+#: payments/permissions.py:27
+msgid "You do not have permission to delete payments."
+msgstr "У вас нет прав для удаления платежей."
+
+#: payments/permissions.py:34
+msgid "You do not have permission to view payment history."
+msgstr "У вас нет прав для просмотра истории платежей."
+
+#: payments/views.py:112
+msgid "Payment deleted successfully."
+msgstr "Платеж успешно удален."
+
+#: payments/views.py:215
+msgid "You can only view your own debt."
+msgstr "Вы можете просматривать только свой долг."
+
+#: server/settings.py:168
+msgid "Internet Magazin API"
+msgstr "CRM API"
+
+#: server/settings.py:169
+msgid "API барои мағозаи мо"
+msgstr "API для нашей CRM системы"
+
+#: settings/models.py:14
+msgid "Logo"
+msgstr "Логотип"
+
+#: settings/models.py:26
+msgid "Organization setting"
+msgstr "Настройка организации"
+
+#: settings/models.py:27
+msgid "Organization settings"
+msgstr "Настройки организации"
+
+#: settings/models.py:46
+msgid "Phone"
+msgstr "Телефон"
+
+#: settings/models.py:58 settings/models.py:70
+msgid "Branch"
+msgstr "Филиал"
+
+#: settings/models.py:59
+msgid "Branches"
+msgstr "Филиалы"
+
+#: settings/models.py:78
+msgid "Capacity"
+msgstr "Вместимость"
+
+#: settings/models.py:91
+msgid "Rooms"
+msgstr "Кабинеты"
+
+#: settings/models.py:100
+msgid "e.g. 1-пара, 2-пара"
+msgstr "напр. 1-пара, 2-пара"
+
+#: settings/models.py:101
+msgid "Label"
+msgstr "Название"
+
+#: settings/models.py:119
+msgid "Lesson time"
+msgstr "Время занятия"
+
+#: settings/models.py:120
+msgid "Lesson times"
+msgstr "Времена занятий"
+
+#: settings/models.py:130
+msgid "Host"
+msgstr "Хост"
+
+#: settings/models.py:134
+msgid "Port"
+msgstr "Порт"
+
+#: settings/models.py:138
+msgid "Use TLS"
+msgstr "Использовать TLS"
+
+#: settings/models.py:142
+msgid "Host user"
+msgstr "Пользователь хоста"
+
+#: settings/models.py:146
+msgid "Host password"
+msgstr "Пароль хоста"
+
+#: settings/models.py:149
+msgid "From email"
+msgstr "Email отправителя"
+
+#: settings/models.py:161
+msgid "SMTP setting"
+msgstr "Настройка SMTP"
+
+#: settings/models.py:162
+msgid "SMTP settings"
+msgstr "Настройки SMTP"
+
+#: settings/models.py:171
+msgid "Bot token"
+msgstr "Токен бота"
+
+#: settings/models.py:176
+msgid "Chat ID"
+msgstr "ID чата"
+
+#: settings/models.py:192
+msgid "Telegram bot setting"
+msgstr "Настройка Telegram бота"
+
+#: settings/models.py:193
+msgid "Telegram bot settings"
+msgstr "Настройки Telegram ботов"
+
+#: settings/models.py:201
+msgid "Daily"
+msgstr "Ежедневно"
+
+#: settings/models.py:202
+msgid "Weekly"
+msgstr "Еженедельно"
+
+#: settings/models.py:203
+msgid "Monthly"
+msgstr "Ежемесячно"
+
+#: settings/models.py:213
+msgid "Retention days"
+msgstr "Дни хранения"
+
+#: settings/models.py:217
+msgid "Is enabled"
+msgstr "Включено"
+
+#: settings/models.py:222
+msgid "Last backup at"
+msgstr "Последняя резервная копия"
+
+#: settings/models.py:234
+msgid "Backup setting"
+msgstr "Настройка резервного копирования"
+
+#: settings/models.py:235
+msgid "Backup settings"
+msgstr "Настройки резервного копирования"
+
+#: students/models.py:11 teachers/models.py:11
+msgid "Inactive"
+msgstr "Неактивный"
+
+#: students/models.py:23 teachers/models.py:23
+msgid "First name"
+msgstr "Имя"
+
+#: students/models.py:28 teachers/models.py:28
+msgid "Last name"
+msgstr "Фамилия"
+
+#: students/permissions.py:6
+msgid "Only administrators can modify this resource."
+msgstr "Только администраторы могут изменять этот ресурс."
+
+#: students/serializers.py:24 teachers/serializers.py:24
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: students/serializers.py:68
+msgid "CRM Login"
+msgstr "Вход в CRM"
+
+#: students/serializers.py:70 teachers/serializers.py:71
+#, python-brace-format
+msgid ""
+"Your CRM account:\n"
+"\n"
+"Phone: {phone}\n"
+"Password: {password}\n"
+msgstr ""
+"Ваша учетная запись в CRM:\n"
+"\n"
+"Телефон: {phone}\n"
+"Пароль: {password}\n"
+
+#: teachers/models.py:34
+msgid "Speciality"
+msgstr "Специальность"
+
+#: teachers/models.py:52
+msgid "Teachers"
+msgstr "Преподаватели"
+
+#: teachers/serializers.py:69
+msgid "CRM Teacher Login"
+msgstr "Вход преподавателя в CRM"

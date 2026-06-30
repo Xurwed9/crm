@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.generics import (
     ListAPIView, RetrieveAPIView, DestroyAPIView, RetrieveUpdateAPIView,
@@ -18,6 +19,8 @@ from .services import send_notification
 
 
 class IsAdmin(BasePermission):
+
+    message = _("Only administrators can perform this action.")
 
     def has_permission(self, request, view):
         return (
@@ -58,7 +61,7 @@ class SendNotificationAPIView(APIView):
 
         if not enabled_channels:
             return Response(
-                {"detail": "No enabled channels available for this recipient."},
+                {"detail": _("No enabled channels available for this recipient.")},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
@@ -99,7 +102,7 @@ class NotificationLogDeleteAPIView(DestroyAPIView):
         log = self.get_object()
         log.delete()
         return Response(
-            {"detail": "Notification log deleted successfully."},
+            {"detail": _("Notification log deleted successfully.")},
             status=status.HTTP_200_OK,
         )
 

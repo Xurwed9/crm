@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.generics import (
     ListAPIView,
@@ -108,7 +109,7 @@ class PaymentDeleteAPIView(DestroyAPIView):
         payment.delete()
 
         return Response(
-            {"detail": "Payment deleted successfully."},
+            {"detail": _("Payment deleted successfully.")},
             status=status.HTTP_200_OK,
         )
 
@@ -211,7 +212,7 @@ class StudentDebtDetailAPIView(RetrieveAPIView):
         if user.role == "student" and student.user != user:
             from rest_framework.exceptions import PermissionDenied
             raise PermissionDenied(
-                "You can only view your own debt."
+                _("You can only view your own debt.")
             )
 
         return student

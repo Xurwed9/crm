@@ -22,6 +22,8 @@ from drf_spectacular.views import (SpectacularAPIView,
 from django.conf import settings
 from django.conf.urls.static import static
 
+from accounts.views import ProfileLanguageAPIView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/accounts/', include('accounts.urls')),
@@ -44,4 +46,7 @@ urlpatterns = [
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'),name='swagger-ui'),
     path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+
+    # Standalone profile language endpoint
+    path('api/profile/language/', ProfileLanguageAPIView.as_view(), name='profile-language-standalone'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

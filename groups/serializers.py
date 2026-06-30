@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from .models import Group
 
@@ -75,10 +76,9 @@ from students.models import Student
 
 class GroupCreateUpdateSerializer(serializers.ModelSerializer):
 
-    course = serializers.CharField()
-    teacher = serializers.CharField()
-    students = serializers.ListField(write_only=True, required=False, default=list)
-
+    course = serializers.CharField(label=_("Course name"))
+    teacher = serializers.CharField(label=_("Teacher full name"))
+    students = serializers.ListField(write_only=True, required=False, default=list, label=_("Students"))
 
     class Meta:
         model = Group
@@ -96,19 +96,18 @@ class GroupCreateUpdateSerializer(serializers.ModelSerializer):
             "status",
         )
 
-
     def _split_full_name(self, full_name):
         parts = full_name.strip().split(" ", 1)
         if len(parts) < 2:
             raise serializers.ValidationError(
-                f"Full name must contain first and last name. Got: '{full_name}'"
+                _("Full name must contain first and last name. Got: '{}'").format(full_name)
             )
         return parts[0], parts[1]
 
     def validate_course(self, value):
         if not Course.objects.filter(name=value).exists():
             raise serializers.ValidationError(
-                f"Course with name '{value}' does not exist."
+                _("Course with name '{}' does not exist.").format(value)
             )
         return value
 
@@ -120,7 +119,7 @@ class GroupCreateUpdateSerializer(serializers.ModelSerializer):
             role="teacher",
         ).exists():
             raise serializers.ValidationError(
-                f"Teacher with full name '{value}' and role 'teacher' does not exist."
+                _("Teacher with full name '{}' and role 'teacher' does not exist.").format(value)
             )
         return value
 
@@ -133,7 +132,7 @@ class GroupCreateUpdateSerializer(serializers.ModelSerializer):
                 user__last_name=last_name,
             ).exists():
                 raise serializers.ValidationError(
-                    f"Student with full name '{full_name}' does not exist."
+                    _("Student with full name '{}' does not exist.").format(full_name)
                 )
         return data
 

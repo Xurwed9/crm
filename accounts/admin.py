@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.utils.translation import gettext_lazy as _
 
 from .models import User, Profile
 
@@ -7,6 +8,8 @@ from .models import User, Profile
 class ProfileInline(admin.StackedInline):
     model = Profile
     can_delete = False
+    verbose_name = _("Profile")
+    verbose_name_plural = _("Profiles")
 
 
 @admin.register(User)
@@ -38,7 +41,7 @@ class UserAdmin(BaseUserAdmin):
 
     fieldsets = BaseUserAdmin.fieldsets + (
         (
-            "Additional Information",
+            _("Additional Information"),
             {
                 "fields": (
                     "phone_number",
@@ -57,7 +60,7 @@ class UserAdmin(BaseUserAdmin):
 
     add_fieldsets = BaseUserAdmin.add_fieldsets + (
         (
-            "Additional Information",
+            _("Additional Information"),
             {
                 "fields": (
                     "phone_number",
@@ -76,6 +79,7 @@ class ProfileAdmin(admin.ModelAdmin):
         "image",
         "address",
         "birth_date",
+        "language",
     )
 
     search_fields = (
@@ -84,3 +88,7 @@ class ProfileAdmin(admin.ModelAdmin):
     )
 
     ordering = ("-id",)
+
+    list_filter = (
+        "language",
+    )

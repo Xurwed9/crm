@@ -1,3 +1,5 @@
+from django.utils.translation import gettext_lazy as _
+
 from rest_framework import status
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.generics import (
@@ -93,7 +95,7 @@ class GradeCreateAPIView(CreateAPIView):
 
             if lesson.teacher != user:
                 raise PermissionDenied(
-                    "You can only grade your own lessons."
+                    _("You can only grade your own lessons.")
                 )
 
             serializer.save(teacher=user)
@@ -138,6 +140,6 @@ class GradeDeleteAPIView(DestroyAPIView):
         grade.delete()
 
         return Response(
-            {"detail": "Grade deleted successfully."},
+            {"detail": _("Grade deleted successfully.")},
             status=status.HTTP_200_OK,
         )

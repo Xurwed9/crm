@@ -1,7 +1,9 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework.permissions import BasePermission
 
 
 class IsAdmin(BasePermission):
+    message = _("You do not have permission to access this resource.")
 
     def has_permission(self, request, view):
         return (
@@ -10,6 +12,7 @@ class IsAdmin(BasePermission):
         )
 
 class CanViewHomework(BasePermission):
+    message = _("You do not have permission to view homework.")
 
     def has_permission(self, request, view):
         return request.user.is_authenticated
@@ -31,6 +34,7 @@ class CanViewHomework(BasePermission):
 
 
 class CanCreateHomework(BasePermission):
+    message = _("You do not have permission to create homework.")
 
     def has_permission(self, request, view):
         user = request.user
@@ -42,6 +46,7 @@ class CanCreateHomework(BasePermission):
 
 
 class CanEditHomework(BasePermission):
+    message = _("You do not have permission to edit homework.")
 
     def has_permission(self, request, view):
         user = request.user
@@ -65,6 +70,7 @@ class CanEditHomework(BasePermission):
 
 
 class CanDeleteHomework(BasePermission):
+    message = _("You do not have permission to delete homework.")
 
     def has_permission(self, request, view):
         return (
@@ -74,6 +80,7 @@ class CanDeleteHomework(BasePermission):
 
 
 class CanViewSubmission(BasePermission):
+    message = _("You do not have permission to view submissions.")
 
     def has_permission(self, request, view):
         return request.user.is_authenticated
@@ -95,7 +102,7 @@ class CanViewSubmission(BasePermission):
 
 
 class CanCreateSubmission(BasePermission):
-
+    message = _("You do not have permission to create submissions.")
 
     def has_permission(self, request, view):
         return (
@@ -105,6 +112,7 @@ class CanCreateSubmission(BasePermission):
 
 
 class CanGradeSubmission(BasePermission):
+    message = _("You do not have permission to grade submissions.")
 
     def has_permission(self, request, view):
         user = request.user
@@ -128,6 +136,7 @@ class CanGradeSubmission(BasePermission):
 
 
 class CanDeleteSubmission(BasePermission):
+    message = _("You do not have permission to delete submissions.")
 
     def has_permission(self, request, view):
         return (

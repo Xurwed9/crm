@@ -1,3 +1,5 @@
+from django.utils.translation import gettext_lazy as _
+
 from rest_framework import status
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.generics import (
@@ -93,7 +95,7 @@ class AttendanceCreateAPIView(CreateAPIView):
 
             if lesson.teacher != user:
                 raise PermissionDenied(
-                    "You can only mark attendance for your own lessons."
+                    _("You can only mark attendance for your own lessons.")
                 )
 
         serializer.save()
@@ -136,6 +138,6 @@ class AttendanceDeleteAPIView(DestroyAPIView):
         attendance.delete()
 
         return Response(
-            {"detail": "Attendance record deleted successfully."},
+            {"detail": _("Attendance record deleted successfully.")},
             status=status.HTTP_200_OK,
         )

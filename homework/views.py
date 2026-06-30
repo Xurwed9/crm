@@ -1,4 +1,5 @@
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework import status
 from rest_framework.generics import (
@@ -119,7 +120,7 @@ class HomeworkDeleteAPIView(DestroyAPIView):
         homework.delete()
 
         return Response(
-            {"detail": "Homework deleted successfully."},
+            {"detail": _("Homework deleted successfully.")},
             status=status.HTTP_200_OK,
         )
 
@@ -180,7 +181,7 @@ class SubmissionCreateAPIView(CreateAPIView):
         except Exception:
             from rest_framework.exceptions import PermissionDenied
             raise PermissionDenied(
-                "Student profile not found. Please contact admin."
+                _("Student profile not found. Please contact admin.")
             )
         serializer.save(student=student)
 
@@ -219,6 +220,6 @@ class SubmissionDeleteAPIView(DestroyAPIView):
         submission.delete()
 
         return Response(
-            {"detail": "Submission deleted successfully."},
+            {"detail": _("Submission deleted successfully.")},
             status=status.HTTP_200_OK,
         )

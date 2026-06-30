@@ -1,3 +1,5 @@
+from django.utils.translation import gettext_lazy as _
+
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
@@ -73,6 +75,6 @@ class GroupDeleteAPIView(DestroyAPIView):
         group.delete()
 
         return Response(
-            {"detail": "Group deleted successfully."},
+            {"detail": _("Group deleted successfully.")},
             status=status.HTTP_200_OK,
         )

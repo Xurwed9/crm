@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -65,11 +66,13 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'accounts.middleware.LanguagePriorityMiddleware',
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -125,14 +128,23 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tg'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Dushanbe'
 
 USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = (
+    ('tg', 'Тоҷикӣ'),
+    ('ru', 'Русский'),
+    ('en', 'English'),
+)
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -153,8 +165,8 @@ DEFAULT_FROM_EMAIL = 'noreply@crm.local'
 
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Internet Magazin API',
-    'DESCRIPTION': 'API барои мағозаи мо',
+    'TITLE': _('Internet Magazin API'),
+    'DESCRIPTION': _('API барои мағозаи мо'),
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'COMPONENT_SPLIT_REQUEST': True,

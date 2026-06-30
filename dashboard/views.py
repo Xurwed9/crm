@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.utils.translation import gettext_lazy as _
 from django.db.models import (
     Count, Sum, Q, Value, OuterRef, Subquery,
     DecimalField, F, Prefetch,
@@ -225,7 +226,7 @@ class DashboardAPIView(APIView):
         try:
             student = user.student
         except Exception:
-            return {"detail": "Student profile not found."}
+            return {"detail": _("Student profile not found.")}
 
         group = student.groups.select_related("course").first()
         group_data = None

@@ -1,70 +1,37 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework.permissions import BasePermission
 
 
-class IsAdmin(BasePermission):
-
-    def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated
-            and request.user.role == "admin"
-        )
-
-
 class CanViewPayment(BasePermission):
+    message = _("You do not have permission to view payments.")
 
     def has_permission(self, request, view):
-        user = request.user
-        if not user.is_authenticated:
-            return False
-        return user.role in ["admin", "student"]
-
-    def has_object_permission(self, request, view, obj):
-
-        user = request.user
-
-        if user.role == "admin":
-            return True
-
-        if user.role == "student":
-            return obj.student.user == user
-
-        return False
+        return request.user.is_authenticated
 
 
 class CanCreatePayment(BasePermission):
+    message = _("You do not have permission to create payments.")
 
     def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated
-            and request.user.role == "admin"
-        )
+        return request.user.is_authenticated and request.user.role == "admin"
 
 
 class CanEditPayment(BasePermission):
+    message = _("You do not have permission to edit payments.")
 
     def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated
-            and request.user.role == "admin"
-        )
-
-    def has_object_permission(self, request, view, obj):
-        return request.user.role == "admin"
+        return request.user.is_authenticated and request.user.role == "admin"
 
 
 class CanDeletePayment(BasePermission):
+    message = _("You do not have permission to delete payments.")
 
     def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated
-            and request.user.role == "admin"
-        )
+        return request.user.is_authenticated and request.user.role == "admin"
 
 
 class CanViewPaymentHistory(BasePermission):
+    message = _("You do not have permission to view payment history.")
 
     def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated
-            and request.user.role == "admin"
-        )
+        return request.user.is_authenticated and request.user.role == "admin"

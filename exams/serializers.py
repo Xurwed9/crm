@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from lessons.models import Lesson
 from students.models import Student
@@ -28,7 +29,7 @@ class ExamStudentField(serializers.SlugRelatedField):
         except Student.DoesNotExist:
             pass
         raise serializers.ValidationError(
-            f"Student with name '{data}' not found. Use 'First Last' format."
+            _("Student with name '{}' not found. Use 'First Last' format.").format(data)
         )
 
 
@@ -88,14 +89,14 @@ class ExamCreateUpdateSerializer(serializers.ModelSerializer):
     def validate_lesson(self, value):
         if value.lesson_type != "exam":
             raise serializers.ValidationError(
-                "Exam can only be created for lessons with type 'exam'."
+                _("Exam can only be created for lessons with type 'exam'.")
             )
         return value
 
     def validate(self, data):
         if data.get("passing_score", 0) > data.get("maximum_score", 0):
             raise serializers.ValidationError(
-                "Passing score cannot be greater than maximum score."
+                _("Passing score cannot be greater than maximum score.")
             )
         return data
 
@@ -159,7 +160,7 @@ class ExamResultCreateUpdateSerializer(serializers.ModelSerializer):
 
         if score > exam.maximum_score:
             raise serializers.ValidationError(
-                f"Score cannot exceed maximum score ({exam.maximum_score})."
+                _("Score cannot exceed maximum score ({max_score}).").format(max_score=exam.maximum_score)
             )
 
         return data

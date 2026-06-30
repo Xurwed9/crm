@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.generics import (
     RetrieveAPIView,
@@ -246,13 +247,13 @@ class JournalCommentCreateAPIView(CreateAPIView):
         if user.role == "teacher" and lesson.teacher != user and lesson.group.teacher != user:
             from rest_framework.exceptions import PermissionDenied
             raise PermissionDenied(
-                "You can only comment on your own lessons."
+                _("You can only comment on your own lessons.")
             )
 
         if user.role == "student" and not lesson.group.students.filter(user=user).exists():
             from rest_framework.exceptions import PermissionDenied
             raise PermissionDenied(
-                "You can only comment on your own lessons."
+                _("You can only comment on your own lessons.")
             )
 
         serializer.save(
@@ -284,6 +285,6 @@ class JournalCommentDeleteAPIView(DestroyAPIView):
         comment.delete()
 
         return Response(
-            {"detail": "Comment deleted successfully."},
+            {"detail": _("Comment deleted successfully.")},
             status=status.HTTP_200_OK,
         )

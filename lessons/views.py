@@ -1,3 +1,5 @@
+from django.utils.translation import gettext_lazy as _
+
 from rest_framework import status
 from rest_framework.generics import (
     ListAPIView,
@@ -123,7 +125,7 @@ class LessonDeleteAPIView(DestroyAPIView):
         lesson.delete()
 
         return Response(
-            {"detail": "Lesson deleted successfully."},
+            {"detail": _("Lesson deleted successfully.")},
             status=status.HTTP_200_OK,
         )
 
@@ -144,14 +146,14 @@ class LessonGenerateAPIView(GenericAPIView):
             group = Group.objects.get(id=group_id)
         except Group.DoesNotExist:
             return Response(
-                {"detail": "Group not found."},
+                {"detail": _("Group not found.")},
                 status=status.HTTP_404_NOT_FOUND,
             )
 
         if request.user.role == "teacher" and group.teacher != request.user:
             return Response(
                 {
-                    "detail": "You can only generate lessons for your own groups."
+                    "detail": _("You can only generate lessons for your own groups.")
                 },
                 status=status.HTTP_403_FORBIDDEN,
             )
@@ -159,6 +161,6 @@ class LessonGenerateAPIView(GenericAPIView):
         count = generate_lessons_for_group(group)
 
         return Response(
-            {"detail": f"{count} lessons generated successfully."},
+            {"detail": _("{} lessons generated successfully.").format(count)},
             status=status.HTTP_201_CREATED,
         )

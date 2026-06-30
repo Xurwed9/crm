@@ -11,6 +11,7 @@ urlpatterns = [
 
     path("profile/", views.ProfileAPIView.as_view(), name="profile"),
     path("profile/image/", views.ProfileImageUpdateAPIView.as_view(), name="profile-image"),
+    path("profile/language/", views.ProfileLanguageAPIView.as_view(), name="profile-language"),
 
     path("auth/login/", views.LoginAPIView.as_view(), name="login"),
     path("auth/logout/", views.LogoutAPIView.as_view(), name="logout"),

@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
+
 from .models import Student
 
 
@@ -13,14 +15,12 @@ class StudentAdmin(admin.ModelAdmin):
         "status",
     )
 
-
     search_fields = (
         "first_name",
         "last_name",
         "user__username",
         "user__phone_number",
     )
-
 
     list_filter = (
         "status",

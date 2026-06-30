@@ -6,14 +6,15 @@ from urllib.error import URLError
 from django.conf import settings
 from django.core.mail import send_mail
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 logger = logging.getLogger(__name__)
 
 
 EVENT_TEMPLATES = {
     "user_created": {
-        "subject": "Welcome to CRM System",
-        "body": (
+        "subject": _("Welcome to CRM System"),
+        "body": _(
             "Hello {first_name} {last_name},\n\n"
             "Your account has been created successfully.\n\n"
             "Username: {username}\n"
@@ -22,8 +23,8 @@ EVENT_TEMPLATES = {
         ),
     },
     "homework_assigned": {
-        "subject": "New Homework: {title}",
-        "body": (
+        "subject": _("New Homework: {title}"),
+        "body": _(
             "Hello {first_name},\n\n"
             "New homework has been assigned.\n\n"
             "Lesson: {lesson_topic}\n"
@@ -33,8 +34,8 @@ EVENT_TEMPLATES = {
         ),
     },
     "exam_scheduled": {
-        "subject": "Exam Scheduled: {title}",
-        "body": (
+        "subject": _("Exam Scheduled: {title}"),
+        "body": _(
             "Hello {first_name},\n\n"
             "An exam has been scheduled.\n\n"
             "Lesson: {lesson_topic}\n"
@@ -45,8 +46,8 @@ EVENT_TEMPLATES = {
         ),
     },
     "payment_reminder": {
-        "subject": "Payment Reminder",
-        "body": (
+        "subject": _("Payment Reminder"),
+        "body": _(
             "Hello {first_name},\n\n"
             "This is a reminder about your pending payment.\n\n"
             "Amount: {amount}\n"
@@ -55,8 +56,8 @@ EVENT_TEMPLATES = {
         ),
     },
     "absent": {
-        "subject": "Absence Notification",
-        "body": (
+        "subject": _("Absence Notification"),
+        "body": _(
             "Hello {first_name},\n\n"
             "You were marked absent for the following lesson:\n\n"
             "Date: {lesson_date}\n"
@@ -66,8 +67,8 @@ EVENT_TEMPLATES = {
         ),
     },
     "custom": {
-        "subject": "{subject}",
-        "body": "{message}",
+        "subject": _("{subject}"),
+        "body": _("{message}"),
     },
 }
 

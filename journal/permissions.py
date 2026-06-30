@@ -1,7 +1,9 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework.permissions import BasePermission
 
 
 class CanViewJournal(BasePermission):
+    message = _("You do not have permission to view the journal.")
 
     def has_permission(self, request, view):
         return request.user.is_authenticated
@@ -23,12 +25,14 @@ class CanViewJournal(BasePermission):
 
 
 class CanCreateJournalComment(BasePermission):
+    message = _("You do not have permission to create journal comments.")
 
     def has_permission(self, request, view):
         return request.user.is_authenticated
 
 
 class CanEditJournalComment(BasePermission):
+    message = _("You do not have permission to edit journal comments.")
 
     def has_permission(self, request, view):
         return request.user.is_authenticated
@@ -44,6 +48,7 @@ class CanEditJournalComment(BasePermission):
 
 
 class CanDeleteJournalComment(BasePermission):
+    message = _("You do not have permission to delete journal comments.")
 
     def has_permission(self, request, view):
         return (

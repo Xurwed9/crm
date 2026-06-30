@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from .models import Course
 
@@ -24,9 +25,7 @@ class CourseAdmin(admin.ModelAdmin):
         "description",
     )
 
-    ordering = (
-        "-id",
-    )
+    ordering = ("-id",)
 
     list_per_page = 10
 
@@ -36,22 +35,20 @@ class CourseAdmin(admin.ModelAdmin):
     )
 
     fieldsets = (
-        ("Course Information", {
+        (_("Course Information"), {
             "fields": (
                 "name",
                 "description",
             ),
         }),
-
-        ("Course Details", {
+        (_("Course Details"), {
             "fields": (
                 "price",
                 "duration",
                 "is_active",
             ),
         }),
-
-        ("System Information", {
+        (_("System Information"), {
             "fields": (
                 "created_at",
                 "updated_at",

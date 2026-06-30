@@ -1,75 +1,30 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework.permissions import BasePermission
 
 
-class IsAdmin(BasePermission):
-
-    def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated
-            and request.user.role == "admin"
-        )
-
-
 class CanViewAttendance(BasePermission):
-
+    message = _("You do not have permission to view attendance records.")
 
     def has_permission(self, request, view):
         return request.user.is_authenticated
 
-    def has_object_permission(self, request, view, obj):
-
-        user = request.user
-
-        if user.role == "admin":
-            return True
-
-        if user.role == "teacher":
-            return obj.lesson.teacher == user
-
-        if user.role == "student":
-            return obj.student.user == user
-
-        return False
-
 
 class CanCreateAttendance(BasePermission):
+    message = _("You do not have permission to create attendance records.")
 
     def has_permission(self, request, view):
-        user = request.user
-
-        if not user.is_authenticated:
-            return False
-
-        return user.role in ["admin", "teacher"]
+        return request.user.is_authenticated and request.user.role in ["admin", "teacher"]
 
 
 class CanEditAttendance(BasePermission):
+    message = _("You do not have permission to edit attendance records.")
 
     def has_permission(self, request, view):
-        user = request.user
-
-        if not user.is_authenticated:
-            return False
-
-        return user.role in ["admin", "teacher"]
-
-    def has_object_permission(self, request, view, obj):
-
-        user = request.user
-
-        if user.role == "admin":
-            return True
-
-        if user.role == "teacher":
-            return obj.lesson.teacher == user
-
-        return False
+        return request.user.is_authenticated and request.user.role in ["admin", "teacher"]
 
 
 class CanDeleteAttendance(BasePermission):
+    message = _("You do not have permission to delete attendance records.")
 
     def has_permission(self, request, view):
-        return (
-            request.user.is_authenticated
-            and request.user.role == "admin"
-        )
+        return request.user.is_authenticated and request.user.role == "admin"

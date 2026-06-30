@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from lessons.models import Lesson
 from students.models import Student
@@ -28,7 +29,7 @@ class StudentSlugField(serializers.SlugRelatedField):
         except Student.DoesNotExist:
             pass
         raise serializers.ValidationError(
-            f"Student with name '{data}' not found. Use 'First Last' format."
+            _("Student with name '{}' not found. Use 'First Last' format.").format(data)
         )
 
 

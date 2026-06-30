@@ -1,7 +1,10 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
 class IsAdmin(BasePermission):
+
+    message = _("Only administrators can perform this action.")
 
     def has_permission(self, request, view):
         return (
@@ -11,6 +14,7 @@ class IsAdmin(BasePermission):
 
 
 class IsTeacher(BasePermission):
+    message = _("Only teachers can perform this action.")
 
     def has_permission(self, request, view):
         return (
@@ -20,9 +24,7 @@ class IsTeacher(BasePermission):
 
 
 class IsStudent(BasePermission):
-    """
-    Танҳо Student.
-    """
+    message = _("Only students can perform this action.")
 
     def has_permission(self, request, view):
         return (
@@ -32,9 +34,7 @@ class IsStudent(BasePermission):
 
 
 class IsAdminOrTeacher(BasePermission):
-    """
-    Admin ё Teacher.
-    """
+    message = _("Only administrators and teachers can perform this action.")
 
     def has_permission(self, request, view):
         return (
@@ -44,10 +44,7 @@ class IsAdminOrTeacher(BasePermission):
 
 
 class IsAdminOrReadOnly(BasePermission):
-    """
-    Ҳама хонда метавонанд.
-    Танҳо Admin метавонад create/update/delete кунад.
-    """
+    message = _("Only administrators can perform this action.")
 
     def has_permission(self, request, view):
         if request.method in SAFE_METHODS:
@@ -60,10 +57,7 @@ class IsAdminOrReadOnly(BasePermission):
 
 
 class IsTeacherOrReadOnly(BasePermission):
-    """
-    Ҳама хонда метавонанд.
-    Танҳо Teacher метавонад edit кунад.
-    """
+    message = _("Only teachers can modify this resource.")
 
     def has_permission(self, request, view):
         if request.method in SAFE_METHODS:
